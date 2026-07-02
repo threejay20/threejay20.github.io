@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Justin Johnson · Senior DevOps / Platform Engineer</title>
+<style>
+:root {
+  --bg: #080b12;
+  --bg-alt: #0d1220;
+  --card: #111827;
+  --card-hover: #161f30;
+  --border: #1e2a3f;
+  --border-bright: #2a3a57;
+  --text: #e8ecf5;
+  --text-dim: #8a96b0;
+  --text-muted: #5a6480;
+  --accent: #3dd9aa;
+  --accent-dim: rgba(61,217,170,0.12);
+  --accent2: #6b9fff;
+  --accent2-dim: rgba(107,159,255,0.12);
+  --accent3: #c084fc;
+  --grad: linear-gradient(135deg, #3dd9aa, #6b9fff);
+  --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+a { color: var(--accent2); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: 1020px; margin: 0 auto; padding: 0 28px; }
+
+/* ── SCROLL FADE ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(8,11,18,0.82);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+nav .wrap { display: flex; align-items: center; justify-content: space-between; padding: 15px 28px; }
+.brand { font-family: var(--mono); font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }
+.brand .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+nav ul { display: flex; gap: 28px; list-style: none; }
+nav a { color: var(--text-dim); font-size: 13.5px; font-weight: 500; transition: color .15s; }
+nav a:hover { color: var(--accent); text-decoration: none; }
+
+/* ── HERO ── */
+header.hero {
+  position: relative;
+  padding: 110px 0 80px;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(61,217,170,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(107,159,255,0.06) 0%, transparent 60%);
+}
+.hero-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(rgba(30,42,63,0.4) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(30,42,63,0.4) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 0%, transparent 70%);
+}
+.status-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 12px; color: var(--accent);
+  background: var(--accent-dim); border: 1px solid rgba(61,217,170,0.25);
+  padding: 6px 14px; border-radius: 20px; margin-bottom: 24px;
+  letter-spacing: .04em;
+}
+.status-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .5; transform: scale(.7); }
+}
+h1 {
+  font-size: 52px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;
+  margin-bottom: 14px;
+}
+h1 .name-grad { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.role-line {
+  font-size: 18px; color: var(--text-dim); margin-bottom: 6px;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.cert-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 12px; font-family: var(--mono);
+  background: rgba(255,165,0,0.1); border: 1px solid rgba(255,165,0,0.3);
+  color: #ffa333; padding: 3px 10px; border-radius: 12px;
+}
+.lede { max-width: 660px; color: var(--text-dim); font-size: 16.5px; margin-bottom: 32px; line-height: 1.7; }
+
+/* stats strip */
+.hero-stats {
+  display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 36px;
+}
+.stat { display: flex; flex-direction: column; }
+.stat-num {
+  font-size: 28px; font-weight: 800; letter-spacing: -0.02em;
+  background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+.stat-label { font-size: 12px; color: var(--text-muted); font-family: var(--mono); margin-top: 3px; }
+
+.cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 600; padding: 12px 22px;
+  border-radius: 9px; border: 1px solid var(--border); transition: all .18s ease;
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--grad); color: #06120f; border-color: transparent;
+  background-size: 200% auto; background-position: left;
+}
+.btn-primary:hover { background-position: right; opacity: .92; text-decoration: none; }
+.btn-ghost { color: var(--text); background: rgba(255,255,255,0.03); }
+.btn-ghost:hover { border-color: var(--accent2); color: var(--accent2); background: var(--accent2-dim); text-decoration: none; }
+
+/* ── SECTION COMMON ── */
+section { padding: 72px 0; border-bottom: 1px solid var(--border); }
+.section-label {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 10px;
+}
+.section-num { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: .06em; }
+.section-line { flex: 1; height: 1px; background: var(--border); }
+h2 { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 36px; }
+.section-subtitle { color: var(--text-dim); font-size: 15.5px; margin-top: -28px; margin-bottom: 36px; }
+
+/* ── IMPACT NUMBERS ── */
+.impact-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
+  margin-bottom: 0;
+}
+.impact-cell {
+  background: var(--card); padding: 28px 24px;
+  display: flex; flex-direction: column; align-items: flex-start;
+  transition: background .2s;
+}
+.impact-cell:hover { background: var(--card-hover); }
+.impact-num {
+  font-size: 38px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;
+  background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+.impact-label { font-size: 13.5px; color: var(--text-dim); line-height: 1.4; }
+.impact-label strong { color: var(--text); display: block; }
+
+/* ── PROJECTS ── */
+.project {
+  position: relative;
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 30px; margin-bottom: 24px; overflow: hidden;
+  transition: border-color .2s, background .2s, transform .2s;
+}
+.project::before {
+  content: ""; position: absolute; inset: 0;
+  background: var(--grad); opacity: 0;
+  transition: opacity .2s;
+  pointer-events: none;
+  border-radius: 14px;
+  padding: 1px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.project:hover { border-color: var(--border-bright); background: var(--card-hover); transform: translateY(-2px); }
+.project:hover::before { opacity: .5; }
+
+.project-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 6px; }
+.project h3 { font-size: 20px; font-weight: 700; }
+.proj-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--mono); font-size: 11.5px;
+  padding: 4px 10px; border-radius: 12px; white-space: nowrap;
+}
+.badge-star { background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.25); color: #ffd700; }
+.badge-ai { background: var(--accent3-dim, rgba(192,132,252,0.1)); border: 1px solid rgba(192,132,252,0.3); color: var(--accent3); }
+.proj-type { font-family: var(--mono); font-size: 12px; color: var(--accent); margin-bottom: 12px; }
+.project p.desc { color: var(--text-dim); font-size: 15px; margin-bottom: 18px; line-height: 1.65; }
+
+.modules {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px;
+}
+.module {
+  font-size: 12.5px; font-family: var(--mono);
+  padding: 5px 12px; border-radius: 8px; border: 1px solid var(--border-bright);
+  color: var(--text-dim); background: var(--bg-alt, #0d1220);
+  display: flex; align-items: center; gap: 5px;
+}
+.module.green { border-color: rgba(61,217,170,0.3); color: var(--accent); background: var(--accent-dim); }
+.module.blue  { border-color: rgba(107,159,255,0.3); color: var(--accent2); background: var(--accent2-dim); }
+.module.purple{ border-color: rgba(192,132,252,0.3); color: var(--accent3); background: rgba(192,132,252,0.08); }
+.module.orange{ border-color: rgba(251,146,60,0.3); color: #fb923c; background: rgba(251,146,60,0.08); }
+
+.project-list { list-style: none; margin-bottom: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.project-list li {
+  font-size: 13.5px; color: var(--text-dim); padding-left: 16px;
+  position: relative; line-height: 1.5;
+}
+.project-list li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 3px; }
+
+.project-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px; padding-top: 18px; border-top: 1px solid var(--border);
+}
+.stack-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.s-chip {
+  font-family: var(--mono); font-size: 11px; color: var(--text-muted);
+  border: 1px solid var(--border); padding: 3px 8px; border-radius: 5px;
+  background: var(--bg-alt, #0d1220);
+}
+.link-out {
+  font-family: var(--mono); font-size: 12.5px; color: var(--accent2);
+  display: flex; align-items: center; gap: 5px;
+  transition: gap .15s;
+}
+.link-out:hover { gap: 8px; text-decoration: none; }
+
+/* ── EXPERIENCE ── */
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before {
+  content: ""; position: absolute; left: 6px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+}
+.job { position: relative; margin-bottom: 44px; }
+.job-dot {
+  position: absolute; left: -32px; top: 4px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--bg); border: 2px solid var(--accent);
+  box-shadow: 0 0 0 3px rgba(61,217,170,0.15);
+}
+.job-dot.past { border-color: var(--accent2); box-shadow: 0 0 0 3px var(--accent2-dim); }
+.job-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 22px 24px;
+  transition: border-color .2s, background .2s;
+}
+.job-card:hover { border-color: var(--border-bright); background: var(--card-hover); }
+.job-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.job-title { font-size: 16px; font-weight: 700; }
+.job-company { color: var(--accent2); font-weight: 600; }
+.job-dates {
+  font-family: var(--mono); font-size: 12px; color: var(--text-muted);
+  background: var(--bg-alt, #0d1220); border: 1px solid var(--border);
+  padding: 3px 10px; border-radius: 10px; white-space: nowrap; align-self: flex-start;
+}
+.job ul { padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.job ul li {
+  color: var(--text-dim); font-size: 14px; padding-left: 18px;
+  position: relative; display: flex; align-items: flex-start; flex-wrap: wrap; gap: 8px;
+}
+.job ul li::before { content: "·"; position: absolute; left: 4px; color: var(--accent); font-size: 16px; line-height: 1.4; }
+.metric {
+  display: inline-block; font-family: var(--mono); font-size: 11px; font-weight: 700;
+  padding: 2px 8px; border-radius: 5px;
+  background: rgba(61,217,170,0.12); border: 1px solid rgba(61,217,170,0.25); color: var(--accent);
+}
+
+/* ── SKILLS ── */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+.skill-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 22px 20px; transition: border-color .2s, background .2s;
+}
+.skill-card:hover { border-color: var(--border-bright); background: var(--card-hover); }
+.skill-icon { font-size: 22px; margin-bottom: 10px; }
+.skill-card h3 { font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 12px; font-family: var(--mono); }
+.tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag {
+  font-family: var(--mono); font-size: 11.5px;
+  background: var(--bg-alt, #0d1220); border: 1px solid var(--border);
+  color: var(--text-dim); padding: 4px 9px; border-radius: 6px;
+  transition: border-color .15s, color .15s;
+}
+.tag:hover { border-color: var(--accent); color: var(--text); }
+
+/* ── EDUCATION ── */
+.edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.edu-card {
+  border: 1px solid var(--border); background: var(--card); border-radius: 12px;
+  padding: 20px; display: flex; flex-direction: column; gap: 6px;
+  transition: border-color .2s;
+}
+.edu-card:hover { border-color: var(--border-bright); }
+.edu-icon { font-size: 24px; }
+.edu-name { font-weight: 700; font-size: 14px; }
+.edu-org { color: var(--text-dim); font-size: 13px; font-family: var(--mono); }
+.edu-highlight { border-color: rgba(255,165,0,0.35); }
+.edu-highlight .edu-name { color: #ffa333; }
+
+/* ── CONTACT FOOTER ── */
+footer {
+  padding: 72px 0 60px; text-align: center; background: var(--bg-alt, #0d1220);
+  border-top: 1px solid var(--border);
+}
+.foot-cta { font-size: 34px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 12px; }
+.foot-cta .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.foot-sub { color: var(--text-dim); font-size: 16px; margin-bottom: 32px; }
+.foot-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+.foot-link {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600;
+  padding: 11px 20px; border-radius: 9px; border: 1px solid var(--border);
+  color: var(--text); background: var(--card); transition: all .18s;
+}
+.foot-link:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); text-decoration: none; }
+.foot-link.primary { background: var(--grad); color: #06120f; border-color: transparent; }
+.foot-link.primary:hover { opacity: .88; color: #06120f; background: var(--grad); }
+.foot-meta { color: var(--text-muted); font-size: 13px; font-family: var(--mono); }
+.foot-meta span { color: var(--text-dim); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 680px) {
+  h1 { font-size: 36px; }
+  .hero { padding: 80px 0 60px; }
+  nav ul { gap: 16px; }
+  nav a { font-size: 12.5px; }
+  .project-list { grid-template-columns: 1fr; }
+  .hero-stats { gap: 20px; }
+  .stat-num { font-size: 24px; }
+  .impact-num { font-size: 30px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="wrap">
+    <div class="brand">jj<span class="g">.</span>dev</div>
+    <ul>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="wrap">
+    <div class="status-badge"><span class="status-dot"></span>AVAILABLE · OPEN TO OPPORTUNITIES</div>
+    <h1><span class="name-grad">Justin Johnson</span></h1>
+    <div class="role-line">
+      Senior DevOps / Platform Engineer
+      <span class="cert-badge">★ AWS Certified Solutions Architect</span>
+    </div>
+    <p class="lede">
+      Senior DevOps / Platform Engineer with 5+ years building cloud-native infrastructure on AWS and GCP,
+      backed by a prior career managing large-scale enterprise operations across multiple lines of business.
+      I bring both the technical depth to architect production platforms and the operational context
+      to understand exactly what's at stake when they go down.
+    </p>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">5+</span><span class="stat-label">years cloud/DevOps</span></div>
+      <div class="stat"><span class="stat-num">900+</span><span class="stat-label">agents managed</span></div>
+      <div class="stat"><span class="stat-num">30%</span><span class="stat-label">IaC provisioning cut</span></div>
+      <div class="stat"><span class="stat-num">25%</span><span class="stat-label">deployment time saved</span></div>
+      <div class="stat"><span class="stat-num">20%</span><span class="stat-label">compute cost reduction</span></div>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:justinjjohnson20@gmail.com">Get in Touch</a>
+      <a class="btn btn-ghost" href="https://github.com/threejay20" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/justinjjohnson1" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ── IMPACT ── -->
+<section id="impact">
+  <div class="wrap">
+    <div class="section-label reveal">
+      <span class="section-num">00 · IMPACT</span>
+      <div class="section-line"></div>
+    </div>
+    <h2 class="reveal">Outcomes that matter</h2>
+    <div class="impact-strip reveal">
+      <div class="impact-cell">
+        <div class="impact-num">~30%</div>
+        <div class="impact-label"><strong>Provisioning overhead cut</strong>Reusable Terraform &amp; Ansible modules across AWS and GCP</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-num">~25%</div>
+        <div class="impact-label"><strong>Deployment time reduced</strong>Standardized Jenkins CI/CD with Docker &amp; Helm</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-num">~30%</div>
+        <div class="impact-label"><strong>Deployment failures down</strong>Automated pipelines shipped to production multiple times/week</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-num">~20%</div>
+        <div class="impact-label"><strong>Compute costs saved</strong>Optimized container scheduling and workload allocation on EKS</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-num">5+ hrs</div>
+        <div class="impact-label"><strong>Saved per sprint</strong>Internal developer tooling that standardized environment setup</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-num">900+</div>
+        <div class="impact-label"><strong>Agents directed</strong>Large-scale enterprise operations management across multiple lines of business</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-num">+30%</div>
+        <div class="impact-label"><strong>Cross-sell close rate</strong>Targeted training programs for a 176-agent customer service team</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <div class="wrap">
+    <div class="section-label reveal">
+      <span class="section-num">01 · PROJECTS</span>
+      <div class="section-line"></div>
+    </div>
+    <h2 class="reveal">Featured Work</h2>
+    <p class="section-subtitle reveal">Real deployed systems — production patterns, not tutorials.</p>
+
+    <!-- Project 1 -->
+    <div class="project reveal">
+      <div class="project-top">
+        <div>
+          <div class="proj-type">// AWS Solutions Architecture + DevOps</div>
+          <h3>AWS Hybrid Architecture Portfolio</h3>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <span class="proj-badge badge-star">★ 3 stars</span>
+          <span class="proj-badge badge-star">142 commits</span>
+        </div>
+      </div>
+
+      <p class="desc">
+        A set of deployed, production-pattern AWS systems demonstrating Solutions Architect–level design decisions
+        alongside DevOps operational rigor. Each module includes architecture decision records (ADRs)
+        documenting the trade-offs made.
+      </p>
+
+      <div class="modules">
+        <span class="module green">01 · Serverless API</span>
+        <span class="module blue">02 · Event-Driven Architecture</span>
+        <span class="module orange">03 · Static Site + CDN</span>
+        <span class="module purple">04 · CI/CD with OIDC</span>
+        <span class="module">ADR Decision Records</span>
+      </div>
+
+      <ul class="project-list">
+        <li>Serverless REST API — API Gateway, Lambda, DynamoDB</li>
+        <li>Event-driven system with SNS, SQS, dead-letter queues</li>
+        <li>Secure static delivery: S3 + CloudFront, private origins</li>
+        <li>GitHub Actions OIDC — zero long-lived AWS credentials</li>
+        <li>Architecture decisions documented per module</li>
+        <li>Deployed and tested against real AWS services</li>
+      </ul>
+
+      <div class="project-footer">
+        <div class="stack-chips">
+          <span class="s-chip">API Gateway</span><span class="s-chip">Lambda</span><span class="s-chip">DynamoDB</span>
+          <span class="s-chip">SNS/SQS</span><span class="s-chip">S3</span><span class="s-chip">CloudFront</span>
+          <span class="s-chip">GitHub Actions</span><span class="s-chip">OIDC</span>
+        </div>
+        <a class="link-out" href="https://github.com/threejay20/aws-hybrid-architecture-portfolio" target="_blank" rel="noopener">
+          View on GitHub <span>→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project reveal">
+      <div class="project-top">
+        <div>
+          <div class="proj-type">// MLOps / LLMOps Infrastructure</div>
+          <h3>Homelab AI Stack</h3>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <span class="proj-badge badge-ai">6 stages</span>
+          <span class="proj-badge badge-ai">MLOps lab</span>
+        </div>
+      </div>
+
+      <p class="desc">
+        Self-hosted AI infrastructure on Docker and WSL2, staged to mirror enterprise MLOps and LLMOps
+        deployment patterns — from local model serving through CI/CD, observability, multi-agent
+        orchestration, and a live React/WebSocket agent UI.
+      </p>
+
+      <div class="modules">
+        <span class="module green">Stage 1 · Model Serving</span>
+        <span class="module blue">Stage 2 · RAG Pipeline</span>
+        <span class="module purple">Stage 2.5 · DevOps AI Agent</span>
+        <span class="module orange">Stage 3 · CI/CD for AI</span>
+        <span class="module green">Stage 4 · Observability</span>
+        <span class="module blue">Stage 5–6 · Multi-Agent UI</span>
+        <span class="module">Security Hardening</span>
+      </div>
+
+      <ul class="project-list">
+        <li>Ollama, MLflow, Qdrant, LangChain, FastAPI</li>
+        <li>RAG pipeline with vector search (Qdrant)</li>
+        <li>DevOps AI agent with Docker socket access</li>
+        <li>Automated eval pipeline via GitHub Actions + pytest</li>
+        <li>Prometheus, Grafana, Evidently AI for model monitoring</li>
+        <li>Multi-agent orchestration with live React/WebSocket UI</li>
+      </ul>
+
+      <div class="project-footer">
+        <div class="stack-chips">
+          <span class="s-chip">Docker</span><span class="s-chip">Python</span><span class="s-chip">LangChain</span>
+          <span class="s-chip">Qdrant</span><span class="s-chip">Ollama</span><span class="s-chip">Prometheus</span>
+          <span class="s-chip">Grafana</span><span class="s-chip">React</span><span class="s-chip">WebSocket</span><span class="s-chip">FastAPI</span>
+        </div>
+        <a class="link-out" href="https://github.com/threejay20/homelab-ai-stack" target="_blank" rel="noopener">
+          View on GitHub <span>→</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ── -->
+<section id="experience">
+  <div class="wrap">
+    <div class="section-label reveal">
+      <span class="section-num">02 · EXPERIENCE</span>
+      <div class="section-line"></div>
+    </div>
+    <h2 class="reveal">Career Timeline</h2>
+
+    <div class="timeline">
+
+      <div class="job reveal">
+        <div class="job-dot"></div>
+        <div class="job-card">
+          <div class="job-head">
+            <div class="job-title">Senior DevOps Engineer · <span class="job-company">CallTek</span></div>
+            <div class="job-dates">Oct 2024 – Present</div>
+          </div>
+          <ul>
+            <li>Designed Jenkins CI/CD pipelines with Docker and Helm across dev, staging, and production. <span class="metric">−25% deploy time</span></li>
+            <li>Built reusable Terraform &amp; Ansible modules for AWS and GCP multi-region environments. <span class="metric">−30% provisioning effort</span></li>
+            <li>Automated backup and disaster recovery workflows, improving RTO and platform resilience against unplanned outages.</li>
+            <li>Optimized container resource allocation and workload scheduling on managed EKS clusters. <span class="metric">−20% compute cost</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job reveal">
+        <div class="job-dot past"></div>
+        <div class="job-card">
+          <div class="job-head">
+            <div class="job-title">Freelance Software &amp; DevOps Engineer · <span class="job-company">Independent</span></div>
+            <div class="job-dates">Oct 2023 – Oct 2024</div>
+          </div>
+          <ul>
+            <li>Delivered cloud infrastructure, full-stack apps, and DevOps tooling for multiple clients, consistently on schedule.</li>
+            <li>Shipped React and Node.js applications end-to-end: UI, API integration, and AWS deployment with automated CI/CD.</li>
+            <li>Built and maintained personal AWS projects at production-grade reliability using containerization and automated pipelines.</li>
+            <li>Configured AWS-native services including S3, CloudFront, Lambda, and API Gateway for client production workloads.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job reveal">
+        <div class="job-dot past"></div>
+        <div class="job-card">
+          <div class="job-head">
+            <div class="job-title">DevOps / Software Engineer · <span class="job-company">Bell Media</span></div>
+            <div class="job-dates">Mar 2022 – Oct 2023</div>
+          </div>
+          <ul>
+            <li>Implemented automated CI/CD pipelines enabling multiple production releases per week. <span class="metric">−30% deploy failures</span></li>
+            <li>Built React components and Node.js REST APIs for internal editorial and content-ops tooling.</li>
+            <li>Created internal developer tooling that standardized environment setup and deployment. <span class="metric">5+ hrs saved/sprint</span></li>
+            <li>Embedded vulnerability scanning and secrets detection into delivery pipelines with the security team.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job reveal">
+        <div class="job-dot past"></div>
+        <div class="job-card">
+          <div class="job-head">
+            <div class="job-title">Senior Operations Manager · <span class="job-company">Bell Canada</span></div>
+            <div class="job-dates">Feb 2021 – Mar 2022</div>
+          </div>
+          <ul>
+            <li>Directed operations spanning 900+ agents across multiple lines of business, maintaining SLA targets for enterprise service delivery. <span class="metric">900+ agents</span></li>
+            <li>Identified bottlenecks across tier-1 support workflows using data analytics and reporting. <span class="metric">+15% SLA attainment</span></li>
+            <li>Led cross-functional incident response coordination, reducing mean time to resolution across business units.</li>
+            <li>Aligned operational reporting with ISO 27001 governance requirements across multiple business units.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job reveal">
+        <div class="job-dot past"></div>
+        <div class="job-card">
+          <div class="job-head">
+            <div class="job-title">Operations Manager · <span class="job-company">Bell Canada</span></div>
+            <div class="job-dates">Apr 2020 – Feb 2021</div>
+          </div>
+          <ul>
+            <li>Managed 176 agents and implemented targeted training programs. <span class="metric">+30% cross-sell close rate</span></li>
+            <li>Deployed KPI reporting dashboards that measurably reduced undetected SLA breaches across service lines.</li>
+            <li>Optimized staffing allocation models and shift workflows, reducing overtime costs.</li>
+            <li>Worked with IT to implement proactive monitoring alerts for earlier issue detection before customer impact.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS ── -->
+<section id="skills">
+  <div class="wrap">
+    <div class="section-label reveal">
+      <span class="section-num">03 · SKILLS</span>
+      <div class="section-line"></div>
+    </div>
+    <h2 class="reveal">Technical Toolkit</h2>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-icon">☁️</div>
+        <h3>Cloud &amp; Containers</h3>
+        <div class="tag-row">
+          <span class="tag">AWS EKS</span><span class="tag">IAM</span><span class="tag">VPC</span>
+          <span class="tag">CloudWatch</span><span class="tag">GCP GKE</span><span class="tag">Docker</span>
+          <span class="tag">Helm</span><span class="tag">Linux RHEL</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">⚙️</div>
+        <h3>IaC &amp; Automation</h3>
+        <div class="tag-row">
+          <span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">Jenkins</span>
+          <span class="tag">CI/CD</span><span class="tag">GitHub Actions</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🔭</div>
+        <h3>Observability</h3>
+        <div class="tag-row">
+          <span class="tag">Prometheus</span><span class="tag">Grafana</span>
+          <span class="tag">ELK Stack</span><span class="tag">Alerting</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🔐</div>
+        <h3>Security</h3>
+        <div class="tag-row">
+          <span class="tag">Image Scanning</span><span class="tag">Secret Detection</span>
+          <span class="tag">Secrets Manager</span><span class="tag">Parameter Store</span><span class="tag">OIDC</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">💻</div>
+        <h3>Languages</h3>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">Bash / Shell</span>
+          <span class="tag">Groovy</span><span class="tag">JavaScript</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🎛️</div>
+        <h3>Orchestration</h3>
+        <div class="tag-row">
+          <span class="tag">Kubernetes</span><span class="tag">EKS</span><span class="tag">GKE</span>
+          <span class="tag">Container Scheduling</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EDUCATION ── -->
+<section>
+  <div class="wrap">
+    <div class="section-label reveal">
+      <span class="section-num">04 · EDUCATION &amp; CERTS</span>
+      <div class="section-line"></div>
+    </div>
+    <h2 class="reveal">Credentials</h2>
+    <div class="edu-grid">
+      <div class="edu-card edu-highlight reveal">
+        <div class="edu-icon">🏅</div>
+        <div class="edu-name">AWS Certified Solutions Architect — Associate</div>
+        <div class="edu-org">Amazon Web Services</div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-icon">🎓</div>
+        <div class="edu-name">Software Development</div>
+        <div class="edu-org">Bell University</div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-icon">⌨️</div>
+        <div class="edu-name">Full Stack Engineering</div>
+        <div class="edu-org">Codecademy</div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-icon">📊</div>
+        <div class="edu-name">Project Management · Business Ops · Data Analytics</div>
+        <div class="edu-org">Microsoft Learn</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER / CONTACT ── -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-cta reveal">Let's <span class="g">build something</span>.</div>
+    <div class="foot-sub reveal">Open to Senior DevOps, Platform Engineering, and SRE roles, remote or on-site.</div>
+    <div class="foot-links reveal">
+      <a class="foot-link primary" href="mailto:justinjjohnson20@gmail.com">✉ justinjjohnson20@gmail.com</a>
+      <a class="foot-link" href="https://github.com/threejay20" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        threejay20
+      </a>
+      <a class="foot-link" href="https://linkedin.com/in/justinjjohnson1" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        justinjjohnson1
+      </a>
+    </div>
+    <div class="foot-meta reveal"><span>+63 960 459 2278</span> · &copy; 2026 Justin Johnson</div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
