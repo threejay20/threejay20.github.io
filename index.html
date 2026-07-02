@@ -150,10 +150,14 @@ a:hover { text-decoration: underline; }
 /* ── SCROLL REVEAL ── */
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
 }
 .reveal.visible { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: 0.08s; }
+.reveal-d2 { transition-delay: 0.16s; }
+.reveal-d3 { transition-delay: 0.24s; }
+.reveal-d4 { transition-delay: 0.32s; }
 
 /* ── NAV ── */
 nav {
@@ -636,6 +640,126 @@ footer {
   padding: 1px 5px; margin-right: 4px;
 }
 
+/* ── HERO NETWORK CANVAS ── */
+#hero-net {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 0; opacity: 0.55;
+}
+
+/* ── SECTION LIGHTING ── */
+section { overflow: hidden; }
+#impact::before {
+  content: ''; position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+  width: 900px; height: 350px; pointer-events: none;
+  background: radial-gradient(ellipse at top, rgba(61,217,170,0.055) 0%, transparent 65%);
+}
+#projects::before {
+  content: ''; position: absolute; top: 0; right: -150px;
+  width: 700px; height: 100%; pointer-events: none;
+  background: radial-gradient(ellipse at right, rgba(107,159,255,0.04) 0%, transparent 65%);
+}
+#cloud-arch::before {
+  content: ''; position: absolute; bottom: -60px; left: -100px;
+  width: 700px; height: 500px; pointer-events: none;
+  background: radial-gradient(ellipse at bottom left, rgba(192,132,252,0.05) 0%, transparent 65%);
+}
+#infra-lab::before {
+  content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 800px; height: 400px; pointer-events: none;
+  background: radial-gradient(ellipse, rgba(61,217,170,0.04) 0%, transparent 65%);
+}
+#skills::before {
+  content: ''; position: absolute; top: 0; left: -100px;
+  width: 600px; height: 100%; pointer-events: none;
+  background: radial-gradient(ellipse at left, rgba(107,159,255,0.035) 0%, transparent 65%);
+}
+
+/* ── PROJECT LANDING PAGE ── */
+.project-banner {
+  margin: -30px -30px 26px;
+  height: 148px;
+  position: relative; overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+.pb-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(13,18,32,0.95) 0%, rgba(8,11,18,1) 100%);
+}
+.pb-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(30,42,63,0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30,42,63,0.25) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.pb-glow {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 400px; height: 200px; pointer-events: none;
+  background: radial-gradient(ellipse, rgba(61,217,170,0.07) 0%, transparent 70%);
+}
+.pb-pipeline {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; padding: 0 24px; z-index: 1;
+}
+.pb-node { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.pb-node-box {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 5px 11px; border-radius: 7px;
+  background: rgba(8,11,18,0.9); border: 1px solid var(--border-bright);
+  font-family: var(--mono); font-size: 10.5px; color: var(--text-dim);
+  white-space: nowrap; line-height: 1.3;
+  transition: border-color 0.2s;
+}
+.pb-node-box.g  { border-color: rgba(61,217,170,0.45); color: var(--accent); }
+.pb-node-box.b  { border-color: rgba(107,159,255,0.45); color: var(--accent2); }
+.pb-node-box.o  { border-color: rgba(251,146,60,0.45); color: #fb923c; }
+.pb-node-box.p  { border-color: rgba(192,132,252,0.45); color: var(--accent3); }
+.pb-node-box.y  { border-color: rgba(251,191,36,0.45); color: #fbbf24; }
+.pb-node-icon { font-size: 15px; line-height: 1; }
+.pb-arrow {
+  font-family: var(--mono); color: var(--border-bright);
+  margin: 0 6px; font-size: 15px; flex-shrink: 0;
+  padding-bottom: 2px;
+}
+/* animated packet travelling along banner */
+@keyframes pb-travel {
+  0%   { left: 3%;  opacity: 0; }
+  6%   { opacity: 1; }
+  93%  { opacity: 1; }
+  100% { left: 95%; opacity: 0; }
+}
+.pb-packet {
+  position: absolute; top: calc(50% - 3px);
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 8px var(--accent), 0 0 16px var(--accent);
+  animation: pb-travel 2.8s ease-in-out infinite;
+  z-index: 2;
+}
+.pb-packet.p2 { animation-delay: 0.95s; background: var(--accent2); box-shadow: 0 0 8px var(--accent2), 0 0 16px var(--accent2); }
+.pb-packet.p3 { animation-delay: 1.9s;  background: var(--accent3); box-shadow: 0 0 8px var(--accent3), 0 0 16px var(--accent3); }
+
+/* ── PROJECT KPI STRIP ── */
+.project-kpis {
+  display: flex; gap: 0; margin-bottom: 20px;
+  background: rgba(255,255,255,0.018);
+  border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
+}
+.project-kpi {
+  flex: 1; padding: 11px 14px; text-align: center;
+  border-right: 1px solid var(--border);
+}
+.project-kpi:last-child { border-right: none; }
+.project-kpi-num {
+  font-size: 17px; font-weight: 800; letter-spacing: -0.02em;
+  background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  line-height: 1.15;
+}
+.project-kpi-label {
+  font-size: 10px; font-family: var(--mono); color: var(--text-muted); margin-top: 2px;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 860px) {
   .hero-inner { grid-template-columns: 1fr; }
@@ -697,6 +821,7 @@ footer {
     <div class="aurora-orb orb3"></div>
   </div>
   <div class="hero-grid"></div>
+  <canvas id="hero-net" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="hero-inner">
       <!-- Left: Content -->
@@ -808,6 +933,30 @@ footer {
 
     <!-- Project 1 -->
     <div class="project reveal" data-tags="aws">
+      <!-- Banner: CI/CD pipeline visualization -->
+      <div class="project-banner">
+        <div class="pb-bg"></div>
+        <div class="pb-grid"></div>
+        <div class="pb-glow" style="background:radial-gradient(ellipse,rgba(107,159,255,0.08) 0%,transparent 70%)"></div>
+        <div class="pb-packet"></div>
+        <div class="pb-packet p2"></div>
+        <div class="pb-packet p3"></div>
+        <div class="pb-pipeline">
+          <div class="pb-node"><div class="pb-node-box">GitHub</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box b">GH Actions</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box o">OIDC Auth</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box b">API Gateway</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box o">Lambda</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box y">DynamoDB</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box p">CloudFront</div></div>
+        </div>
+      </div>
       <div class="project-top">
         <div>
           <div class="proj-type">// AWS Solutions Architecture + DevOps</div>
@@ -823,6 +972,12 @@ footer {
         alongside DevOps operational rigor. Each module includes architecture decision records (ADRs)
         documenting the trade-offs made.
       </p>
+      <div class="project-kpis">
+        <div class="project-kpi"><div class="project-kpi-num">4</div><div class="project-kpi-label">arch modules</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">0</div><div class="project-kpi-label">long-lived credentials</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">ADR</div><div class="project-kpi-label">per module</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">100%</div><div class="project-kpi-label">IaC provisioned</div></div>
+      </div>
       <div class="modules">
         <span class="module green">01 · Serverless API</span>
         <span class="module blue">02 · Event-Driven Architecture</span>
@@ -852,6 +1007,28 @@ footer {
 
     <!-- Project 2 -->
     <div class="project reveal" data-tags="mlops">
+      <!-- Banner: ML pipeline visualization -->
+      <div class="project-banner">
+        <div class="pb-bg"></div>
+        <div class="pb-grid"></div>
+        <div class="pb-glow" style="background:radial-gradient(ellipse,rgba(192,132,252,0.08) 0%,transparent 70%)"></div>
+        <div class="pb-packet" style="background:var(--accent3);box-shadow:0 0 8px var(--accent3),0 0 16px var(--accent3)"></div>
+        <div class="pb-packet p2" style="background:var(--accent);box-shadow:0 0 8px var(--accent),0 0 16px var(--accent)"></div>
+        <div class="pb-packet p3"></div>
+        <div class="pb-pipeline">
+          <div class="pb-node"><div class="pb-node-box b">Docker</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box g">Ollama</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box p">RAG / LangChain</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box o">FastAPI Agent</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box p">Prometheus</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box b">React UI</div></div>
+        </div>
+      </div>
       <div class="project-top">
         <div>
           <div class="proj-type">// MLOps / LLMOps Infrastructure</div>
@@ -867,6 +1044,12 @@ footer {
         deployment patterns — from local model serving through CI/CD, observability, multi-agent
         orchestration, and a live React/WebSocket agent UI.
       </p>
+      <div class="project-kpis">
+        <div class="project-kpi"><div class="project-kpi-num">6</div><div class="project-kpi-label">MLOps stages</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">Local</div><div class="project-kpi-label">model inference</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">Live</div><div class="project-kpi-label">WebSocket UI</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">Eval</div><div class="project-kpi-label">CI pipeline</div></div>
+      </div>
       <div class="modules">
         <span class="module green">Stage 1 · Model Serving</span>
         <span class="module blue">Stage 2 · RAG Pipeline</span>
@@ -1263,17 +1446,131 @@ document.addEventListener('mousemove', e => {
 }, { passive: true });
 
 /* ══════════════════════════════════════════════
-   SCROLL REVEAL
+   SCROLL REVEAL (staggered)
 ══════════════════════════════════════════════ */
 const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.classList.add('visible');
+      // Stagger siblings in same parent with a small offset
+      const siblings = e.target.parentElement.querySelectorAll('.reveal:not(.visible)');
+      siblings.forEach((sib, i) => {
+        sib.style.transitionDelay = ((i + 1) * 0.07) + 's';
+        setTimeout(() => sib.classList.add('visible'), 0);
+        revealObs.unobserve(sib);
+      });
       revealObs.unobserve(e.target);
     }
   });
-}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+}, { threshold: 0.06, rootMargin: '0px 0px -20px 0px' });
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+/* ══════════════════════════════════════════════
+   HERO NETWORK CANVAS
+══════════════════════════════════════════════ */
+(function initHeroNet() {
+  const canvas = document.getElementById('hero-net');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, animId;
+
+  function resize() {
+    const hero = canvas.closest('header') || canvas.parentElement;
+    const rect = hero.getBoundingClientRect();
+    W = canvas.width  = rect.width  * (window.devicePixelRatio || 1);
+    H = canvas.height = rect.height * (window.devicePixelRatio || 1);
+    ctx.scale(window.devicePixelRatio || 1, window.devicePixelRatio || 1);
+    W = rect.width; H = rect.height;
+  }
+  window.addEventListener('resize', () => { cancelAnimationFrame(animId); resize(); draw(); });
+  resize();
+
+  // Infrastructure nodes — relative coordinates
+  const NODES = [
+    { rx:0.04, ry:0.50, color:'#8b949e' }, // Dev
+    { rx:0.17, ry:0.28, color:'#6b9fff' }, // CI/CD
+    { rx:0.17, ry:0.72, color:'#6b9fff' }, // IaC
+    { rx:0.32, ry:0.50, color:'#fb923c' }, // Registry
+    { rx:0.47, ry:0.22, color:'#e7157b' }, // API GW
+    { rx:0.47, ry:0.50, color:'#3dd9aa' }, // K8s
+    { rx:0.47, ry:0.78, color:'#6b9fff' }, // Infra
+    { rx:0.62, ry:0.30, color:'#ff9900' }, // Lambda
+    { rx:0.62, ry:0.62, color:'#3dd9aa' }, // Pods
+    { rx:0.77, ry:0.22, color:'#fbbf24' }, // DB
+    { rx:0.77, ry:0.60, color:'#c084fc' }, // Prometheus
+    { rx:0.92, ry:0.42, color:'#8c4fff' }, // CDN
+  ];
+
+  const EDGES = [
+    [0,1],[0,2],
+    [1,3],[2,3],
+    [3,4],[3,5],[3,6],
+    [4,7],[5,8],[6,8],
+    [7,9],[8,9],[8,10],
+    [9,11],[10,11],
+  ];
+
+  const packets = [];
+
+  function spawnPacket() {
+    const [a, b] = EDGES[Math.floor(Math.random() * EDGES.length)];
+    packets.push({ a, b, t: 0, speed: 0.004 + Math.random() * 0.005, color: NODES[a].color });
+  }
+
+  for (let i = 0; i < 6; i++) setTimeout(spawnPacket, i * 350);
+  setInterval(spawnPacket, 480);
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    const now = Date.now() / 1000;
+
+    // Edges
+    EDGES.forEach(([a, b]) => {
+      const na = NODES[a], nb = NODES[b];
+      ctx.beginPath();
+      ctx.moveTo(na.rx * W, na.ry * H);
+      ctx.lineTo(nb.rx * W, nb.ry * H);
+      ctx.strokeStyle = 'rgba(107,159,255,0.10)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    });
+
+    // Packets
+    for (let i = packets.length - 1; i >= 0; i--) {
+      const p = packets[i];
+      p.t += p.speed;
+      if (p.t >= 1) { packets.splice(i, 1); continue; }
+      const na = NODES[p.a], nb = NODES[p.b];
+      const px = (na.rx + (nb.rx - na.rx) * p.t) * W;
+      const py = (na.ry + (nb.ry - na.ry) * p.t) * H;
+      const grd = ctx.createRadialGradient(px, py, 0, px, py, 7);
+      grd.addColorStop(0, p.color + 'bb');
+      grd.addColorStop(1, 'transparent');
+      ctx.beginPath(); ctx.arc(px, py, 7, 0, Math.PI * 2);
+      ctx.fillStyle = grd; ctx.fill();
+      ctx.beginPath(); ctx.arc(px, py, 2.2, 0, Math.PI * 2);
+      ctx.fillStyle = p.color; ctx.fill();
+    }
+
+    // Nodes
+    NODES.forEach((n, i) => {
+      const x = n.rx * W, y = n.ry * H;
+      const pulse = 0.82 + Math.sin(now * 1.3 + i * 0.9) * 0.18;
+      const grd = ctx.createRadialGradient(x, y, 0, x, y, 22 * pulse);
+      grd.addColorStop(0, n.color + '25');
+      grd.addColorStop(1, 'transparent');
+      ctx.beginPath(); ctx.arc(x, y, 22 * pulse, 0, Math.PI * 2);
+      ctx.fillStyle = grd; ctx.fill();
+      ctx.beginPath(); ctx.arc(x, y, 5, 0, Math.PI * 2);
+      ctx.strokeStyle = n.color + '99'; ctx.lineWidth = 1.5; ctx.stroke();
+      ctx.beginPath(); ctx.arc(x, y, 2.8, 0, Math.PI * 2);
+      ctx.fillStyle = n.color; ctx.fill();
+    });
+
+    animId = requestAnimationFrame(draw);
+  }
+  draw();
+})();
 
 /* ══════════════════════════════════════════════
    ANIMATED COUNTERS
