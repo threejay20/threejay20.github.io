@@ -1867,26 +1867,31 @@ const archDefs = {
   }
 };
 
-/* Inline SVG icons for each AWS service */
+/* Official AWS Architecture Icons (awslabs/aws-icons-for-plantuml) */
+const _AW = 'https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/';
+const ICON_URLS = {
+  apigw:      _AW + 'NetworkingContentDelivery/APIGateway.png',
+  lambda:     _AW + 'Compute/Lambda.png',
+  dynamo:     _AW + 'Database/DynamoDB.png',
+  cloudwatch: _AW + 'ManagementGovernance/CloudWatch.png',
+  s3:         _AW + 'Storage/SimpleStorageService.png',
+  cloudfront: _AW + 'NetworkingContentDelivery/CloudFront.png',
+  route53:    _AW + 'NetworkingContentDelivery/Route53.png',
+  sns:        _AW + 'ApplicationIntegration/SimpleNotificationService.png',
+  sqs:        _AW + 'ApplicationIntegration/SimpleQueueService.png',
+  oidc:       _AW + 'SecurityIdentityCompliance/IAMIdentityCenter.png',
+  sts:        _AW + 'SecurityIdentityCompliance/IdentityAccessManagementAWSSTS.png',
+};
+
+/* Fallback inline SVGs for non-AWS services */
 const ICONS = {
-  client:     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#374151"/><rect x="8" y="10" width="24" height="14" rx="2" fill="none" stroke="white" stroke-width="1.8"/><line x1="20" y1="24" x2="20" y2="29" stroke="white" stroke-width="1.8"/><line x1="14" y1="29" x2="26" y2="29" stroke="white" stroke-width="2.2"/></svg>`,
-  apigw:      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#E7157B"/><circle cx="20" cy="19" r="9" fill="none" stroke="white" stroke-width="1.8"/><text x="20" y="23" font-size="8.5" fill="white" text-anchor="middle" font-weight="bold" font-family="Arial,sans-serif">API</text></svg>`,
-  lambda:     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#FF9900"/><text x="20" y="28" font-size="22" fill="white" text-anchor="middle" font-family="Georgia,serif" font-weight="bold">&#955;</text></svg>`,
-  dynamo:     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#1A73E8"/><ellipse cx="20" cy="13" rx="10" ry="3.5" fill="none" stroke="white" stroke-width="1.5"/><line x1="10" y1="13" x2="10" y2="27" stroke="white" stroke-width="1.5"/><line x1="30" y1="13" x2="30" y2="27" stroke="white" stroke-width="1.5"/><ellipse cx="20" cy="27" rx="10" ry="3.5" fill="none" stroke="white" stroke-width="1.5"/><ellipse cx="20" cy="20" rx="10" ry="3.5" fill="none" stroke="white" stroke-width="1" stroke-dasharray="3,2"/></svg>`,
-  cloudwatch: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#E7157B"/><circle cx="20" cy="20" r="9" fill="none" stroke="white" stroke-width="1.8"/><polyline points="12,20 16,15 20,22 24,13 28,20" fill="none" stroke="white" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>`,
-  s3:         `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#3F8624"/><ellipse cx="20" cy="12" rx="11" ry="4" fill="white" opacity="0.85"/><path d="M9 12 L9 28 Q9 32 20 32 Q31 32 31 28 L31 12" fill="none" stroke="white" stroke-width="1.8"/><ellipse cx="20" cy="20" rx="11" ry="2.5" fill="none" stroke="white" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/></svg>`,
-  cloudfront: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#8C4FFF"/><circle cx="20" cy="20" r="10" fill="none" stroke="white" stroke-width="1.8"/><ellipse cx="20" cy="20" rx="5" ry="10" fill="none" stroke="white" stroke-width="1.2"/><line x1="10" y1="20" x2="30" y2="20" stroke="white" stroke-width="1.2"/><line x1="11" y1="15.5" x2="29" y2="15.5" stroke="white" stroke-width="1" opacity="0.6"/><line x1="11" y1="24.5" x2="29" y2="24.5" stroke="white" stroke-width="1" opacity="0.6"/></svg>`,
-  route53:    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#8C4FFF"/><circle cx="20" cy="20" r="10" fill="none" stroke="white" stroke-width="1.8"/><line x1="20" y1="10" x2="20" y2="30" stroke="white" stroke-width="1.2"/><path d="M11 15 Q15.5 12 20 10 Q24.5 12 29 15 M11 25 Q15.5 28 20 30 Q24.5 28 29 25" fill="none" stroke="white" stroke-width="1.2"/></svg>`,
-  sns:        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#FF9900"/><path d="M20 9 Q26 9 26 15 L28 26 L12 26 L14 15 Q14 9 20 9Z" fill="none" stroke="white" stroke-width="1.8"/><line x1="17" y1="26" x2="23" y2="26" stroke="white" stroke-width="2"/><circle cx="20" cy="30.5" r="2" fill="white"/></svg>`,
-  sqs:        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#FF9900"/><rect x="9" y="11" width="22" height="5" rx="2.5" fill="white" opacity="0.95"/><rect x="9" y="19" width="22" height="5" rx="2.5" fill="white" opacity="0.75"/><rect x="9" y="27" width="15" height="5" rx="2.5" fill="white" opacity="0.55"/></svg>`,
-  dlq:        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#DC2626"/><circle cx="20" cy="20" r="10" fill="none" stroke="white" stroke-width="1.8"/><line x1="20" y1="14" x2="20" y2="22" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="26" r="1.8" fill="white"/></svg>`,
-  github:     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#24292E"/><path fill="white" d="M20 8C13.4 8 8 13.4 8 20c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5C28.6 29.8 32 25.3 32 20c0-6.6-5.4-12-12-12z"/></svg>`,
-  ghactions:  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#2088FF"/><circle cx="14" cy="14" r="5" fill="none" stroke="white" stroke-width="1.8"/><circle cx="14" cy="14" r="2" fill="white"/><circle cx="27" cy="26" r="5" fill="none" stroke="white" stroke-width="1.8"/><circle cx="27" cy="26" r="2" fill="white"/><path d="M19 14 Q23 14 23 20 L23 26" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="2.5,2.5"/></svg>`,
-  oidc:       `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#DC2626"/><path d="M20 9 C14 9 10 13 10 18.5 C10 22.5 12.5 25.5 16 27 L16 31 L24 31 L24 27 C27.5 25.5 30 22.5 30 18.5 C30 13 26 9 20 9Z" fill="none" stroke="white" stroke-width="1.8"/><circle cx="20" cy="18.5" r="3.5" fill="white"/></svg>`,
-  sts:        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#DC2626"/><rect x="10" y="19" width="20" height="13" rx="3" fill="none" stroke="white" stroke-width="1.8"/><path d="M15 19 L15 14.5 Q15 10 20 10 Q25 10 25 14.5 L25 19" fill="none" stroke="white" stroke-width="1.8"/><circle cx="20" cy="25" r="2.5" fill="white"/></svg>`,
-  publisher:  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#374151"/><rect x="8" y="10" width="24" height="14" rx="2" fill="none" stroke="white" stroke-width="1.8"/><path d="M20 24 L20 30 M16 27 L20 30 L24 27" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-  user:       `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#374151"/><circle cx="20" cy="15" r="6" fill="none" stroke="white" stroke-width="1.8"/><path d="M9 33 Q9 25 20 25 Q31 25 31 33" fill="none" stroke="white" stroke-width="1.8"/></svg>`,
-  awsdeploy:  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#FF9900"/><path d="M11 22 Q11 14 20 14 Q29 14 29 22" fill="none" stroke="white" stroke-width="1.8"/><path d="M9 22 L11 22 L15.5 20 L20 23 L24.5 20 L29 22 L31 22" fill="none" stroke="white" stroke-width="1.8" stroke-linejoin="round"/><text x="20" y="34" font-size="7" fill="white" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold">AWS</text></svg>`,
+  client:    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#374151"/><rect x="8" y="10" width="24" height="14" rx="2" fill="none" stroke="white" stroke-width="1.8"/><line x1="20" y1="24" x2="20" y2="29" stroke="white" stroke-width="1.8"/><line x1="14" y1="29" x2="26" y2="29" stroke="white" stroke-width="2.2"/></svg>`,
+  dlq:       `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#DC2626"/><circle cx="20" cy="20" r="10" fill="none" stroke="white" stroke-width="1.8"/><line x1="20" y1="14" x2="20" y2="22" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="26" r="1.8" fill="white"/></svg>`,
+  github:    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#24292E"/><path fill="white" d="M20 8C13.4 8 8 13.4 8 20c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5C28.6 29.8 32 25.3 32 20c0-6.6-5.4-12-12-12z"/></svg>`,
+  ghactions: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#2088FF"/><circle cx="14" cy="14" r="5" fill="none" stroke="white" stroke-width="1.8"/><circle cx="14" cy="14" r="2" fill="white"/><circle cx="27" cy="26" r="5" fill="none" stroke="white" stroke-width="1.8"/><circle cx="27" cy="26" r="2" fill="white"/><path d="M19 14 Q23 14 23 20 L23 26" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="2.5,2.5"/></svg>`,
+  publisher: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#374151"/><rect x="8" y="10" width="24" height="14" rx="2" fill="none" stroke="white" stroke-width="1.8"/><path d="M20 24 L20 30 M16 27 L20 30 L24 27" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  user:      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#374151"/><circle cx="20" cy="15" r="6" fill="none" stroke="white" stroke-width="1.8"/><path d="M9 33 Q9 25 20 25 Q31 25 31 33" fill="none" stroke="white" stroke-width="1.8"/></svg>`,
+  awsdeploy: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#FF9900"/><path d="M11 22 Q11 14 20 14 Q29 14 29 22" fill="none" stroke="white" stroke-width="1.8"/><path d="M9 22 L11 22 L15.5 20 L20 23 L24.5 20 L29 22 L31 22" fill="none" stroke="white" stroke-width="1.8" stroke-linejoin="round"/><text x="20" y="34" font-size="7" fill="white" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold">AWS</text></svg>`,
 };
 
 const ICON_MAP = {
@@ -1977,12 +1982,13 @@ function renderArch(key) {
     glow.setAttribute('pointer-events', 'none');
     g.appendChild(glow);
 
-    // Service icon (SVG image via data URI)
+    // Service icon — official AWS PNG or fallback inline SVG
     const iconKey = ICON_MAP[node.id] || node.icon;
+    const iconUrl = ICON_URLS[iconKey];
     const iconSvg = ICONS[iconKey];
-    if (iconSvg) {
+    if (iconUrl || iconSvg) {
       const img = document.createElementNS(ns, 'image');
-      img.setAttribute('href', 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(iconSvg));
+      img.setAttribute('href', iconUrl || ('data:image/svg+xml;charset=utf-8,' + encodeURIComponent(iconSvg)));
       img.setAttribute('x', '7'); img.setAttribute('y', '7');
       img.setAttribute('width', '36'); img.setAttribute('height', '36');
       g.appendChild(img);
