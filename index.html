@@ -3,18 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Justin Johnson · Senior DevOps / Platform Engineer</title>
-<meta name="description" content="Senior DevOps / Platform Engineer with 5+ years on AWS and GCP. AWS Certified Solutions Architect. Expert in Kubernetes, Terraform, CI/CD, and cloud-native infrastructure.">
-<meta name="keywords" content="DevOps, Platform Engineer, AWS, Kubernetes, Terraform, CI/CD, SRE, Cloud Infrastructure">
+<title>Justin Johnson · Support Operations Automation &amp; Cloud Engineering</title>
+<meta name="description" content="I help support teams get AI to resolve real customer volume. Former BPO operations leader (900+ agents), now an AWS Certified Solutions Architect building cloud and AI systems.">
+<meta name="keywords" content="Support operations, AI customer support, support automation, BPO operations, AWS, cloud engineering, DevOps">
 <meta name="author" content="Justin Johnson">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://threejay20.github.io">
-<meta property="og:title" content="Justin Johnson · Senior DevOps / Platform Engineer">
-<meta property="og:description" content="Senior DevOps / Platform Engineer with 5+ years on AWS and GCP. AWS Certified Solutions Architect.">
+<meta property="og:title" content="Justin Johnson · Support Operations Automation &amp; Cloud Engineering">
+<meta property="og:description" content="I help support teams get AI to resolve real customer volume. Former BPO operations leader (900+ agents), now an AWS Certified Solutions Architect building cloud and AI systems.">
 <meta property="og:image" content="https://threejay20.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://threejay20.github.io/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Justin Johnson · Senior DevOps / Platform Engineer">
-<meta name="twitter:description" content="5+ years AWS/GCP. AWS Certified. Kubernetes, Terraform, CI/CD.">
+<meta name="twitter:title" content="Justin Johnson · Support Operations Automation &amp; Cloud Engineering">
+<meta name="twitter:description" content="I help support teams get AI to resolve real customer volume. Former BPO operations leader (900+ agents), now an AWS Certified Solutions Architect building cloud and AI systems.">
 <meta name="theme-color" content="#080b12">
 <link rel="manifest" href="data:application/json,{%22name%22:%22jj.dev%22,%22short_name%22:%22jj.dev%22,%22start_url%22:%22/%22,%22display%22:%22standalone%22,%22background_color%22:%22%23080b12%22,%22theme_color%22:%22%23080b12%22}">
 <style>
@@ -41,7 +44,7 @@
   --cx: -400px; --cy: -400px;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   background: var(--bg);
   color: var(--text);
@@ -560,6 +563,19 @@ h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.025em; margin-bottom:
 .pd-purple { background: var(--accent3); }
 .pd-orange { background: #fb923c; }
 .pd-yellow { background: #fbbf24; }
+.pd-teal   { background: #2dd4bf; }
+.pd-pink   { background: #f472b6; }
+.skill-pill.cat-ops:hover    { border-color: #2dd4bf; box-shadow: 0 4px 16px rgba(45,212,191,0.18); }
+.skill-pill.cat-ai:hover     { border-color: #f472b6; box-shadow: 0 4px 16px rgba(244,114,182,0.15); }
+.nav-work { color: var(--accent) !important; font-weight: 600; }
+.label-tag { display: inline-block; font-family: var(--mono); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--border-bright); color: var(--text-dim); margin-bottom: 10px; }
+.label-tag.pro { border-color: rgba(61,217,170,0.4); color: var(--accent); }
+.why-line { margin-top: 12px; padding: 12px 14px; border-left: 2px solid var(--accent); background: var(--accent-dim); border-radius: 0 8px 8px 0; font-size: 14px; color: var(--text); }
+.why-line strong { color: var(--accent); }
+.case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 18px; }
+.case-block h4 { font-size: 13px; font-family: var(--mono); color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
+.case-block p, .case-block li { font-size: 14.5px; color: var(--text-dim); }
+.case-block ul { padding-left: 18px; }
 
 .skills-legend { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
 .legend-item {
@@ -809,11 +825,11 @@ section { overflow: hidden; }
     <div class="brand" onclick="window.scrollTo({top:0,behavior:'smooth'})">jj<span class="g">.</span>dev</div>
     <ul>
       <li><a href="#impact">Impact</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#infra-lab">Lab</a></li>
+      <li><a href="#operations">Operations</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a class="nav-work" href="consulting/">Work with me</a></li>
       <li>
         <span class="nav-cmd" id="cmd-trigger" title="Command Palette">
           <kbd>⌘</kbd><kbd>K</kbd>
@@ -837,26 +853,26 @@ section { overflow: hidden; }
     <div class="hero-inner">
       <!-- Left: Content -->
       <div>
-        <div class="status-badge"><span class="status-dot"></span>AVAILABLE · OPEN TO OPPORTUNITIES</div>
+        <div class="status-badge"><span class="status-dot"></span>SUPPORT OPERATIONS AUTOMATION · CONSULTING</div>
         <h1><span class="name-grad">Justin Johnson</span></h1>
         <div class="role-line">
-          Senior DevOps / Platform Engineer
+          Operator turned engineer
           <span class="cert-badge">★ AWS Certified Solutions Architect</span>
         </div>
         <p class="lede">
-          Senior DevOps / Platform Engineer with 5+ years building cloud-native infrastructure on AWS and GCP,
-          backed by a prior career leading large-scale enterprise operations across multiple lines of business.
-          I bring both the technical depth to architect production platforms and the operational leadership context (cross-functional coordination, SLA governance, 900+ agents) to understand exactly what's at stake when they go down.
+          I ran BPO support operations for 900+ agents, then became a cloud engineer.
+          Now I help support teams get AI to resolve real customer volume, and prove it in the numbers leadership already watches:
+          resolution rate, service levels, customer satisfaction and cost per contact.
         </p>
         <div class="hero-stats">
-          <div class="stat"><span class="stat-num" data-count="5" data-suffix="+">5+</span><span class="stat-label">years cloud/DevOps</span></div>
-          <div class="stat"><span class="stat-num" data-count="900" data-suffix="+">900+</span><span class="stat-label">agents managed</span></div>
-          <div class="stat"><span class="stat-num" data-count="30" data-suffix="%">30%</span><span class="stat-label">IaC cut</span></div>
-          <div class="stat"><span class="stat-num" data-count="25" data-suffix="%">25%</span><span class="stat-label">deploy time saved</span></div>
+          <div class="stat"><span class="stat-num" data-count="900" data-suffix="+">900+</span><span class="stat-label">BPO agents led</span></div>
+          <div class="stat"><span class="stat-num" data-count="15" data-suffix="%">15%</span><span class="stat-label">SLA attainment gain</span></div>
+          <div class="stat"><span class="stat-num" data-count="30" data-suffix="%">30%</span><span class="stat-label">fewer failed deploys</span></div>
           <div class="stat"><span class="stat-num" data-count="20" data-suffix="%">20%</span><span class="stat-label">compute cost cut</span></div>
         </div>
         <div class="cta-row">
-          <a class="btn btn-primary" href="mailto:justinjjohnson20@gmail.com">Get in Touch</a>
+          <a class="btn btn-primary" href="consulting/">Work with me</a>
+          <a class="btn btn-ghost" href="mailto:justinjjohnson20@gmail.com">Email</a>
           <a class="btn btn-ghost" href="https://github.com/threejay20" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
             GitHub
@@ -892,319 +908,79 @@ section { overflow: hidden; }
       <div class="section-line"></div>
     </div>
     <h2 class="reveal">Outcomes that matter</h2>
-    <p class="section-subtitle reveal">Numbers from real systems, real teams, real stakes.</p>
+    <p class="section-subtitle reveal">Results from my professional roles. Operations first, because that is where technology has to pay off.</p>
     <div class="impact-strip reveal">
       <div class="impact-cell">
-        <div class="impact-num">~30%</div>
-        <div class="impact-label"><strong>Provisioning overhead cut</strong>Reusable Terraform &amp; Ansible modules across AWS and GCP</div>
-      </div>
-      <div class="impact-cell">
-        <div class="impact-num">~25%</div>
-        <div class="impact-label"><strong>Deployment time reduced</strong>Standardized Jenkins CI/CD with Docker &amp; Helm</div>
-      </div>
-      <div class="impact-cell">
-        <div class="impact-num">~30%</div>
-        <div class="impact-label"><strong>Deployment failures down</strong>Automated pipelines shipping to production multiple times/week</div>
-      </div>
-      <div class="impact-cell">
-        <div class="impact-num">~20%</div>
-        <div class="impact-label"><strong>Compute costs saved</strong>Optimized container scheduling and workload allocation on EKS</div>
-      </div>
-      <div class="impact-cell">
-        <div class="impact-num">5+ hrs</div>
-        <div class="impact-label"><strong>Saved per sprint</strong>Internal developer tooling that standardized environment setup</div>
-      </div>
-      <div class="impact-cell">
         <div class="impact-num">900+</div>
-        <div class="impact-label"><strong>Agents directed</strong>Large-scale enterprise operations across multiple lines of business</div>
+        <div class="impact-label"><strong>BPO agents directed</strong>Bell Canada · support operation across multiple lines of business</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-num">+15%</div>
+        <div class="impact-label"><strong>SLA attainment</strong>Bell Canada · analytics that removed tier-1 support bottlenecks</div>
       </div>
       <div class="impact-cell">
         <div class="impact-num">+30%</div>
-        <div class="impact-label"><strong>Cross-sell close rate</strong>Targeted training programs for a 176-agent customer service team</div>
+        <div class="impact-label"><strong>Cross-sell close rate</strong>Bell Canada · training program for a 176-agent team</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-num">~30%</div>
+        <div class="impact-label"><strong>Fewer failed deployments</strong>Bell Media · automated release pipelines, several releases a week</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-num">5+ hrs</div>
+        <div class="impact-label"><strong>Saved per sprint</strong>Bell Media · internal tooling that removed repetitive setup work</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-num">~25%</div>
+        <div class="impact-label"><strong>Faster release cycle</strong>CallTek · standardized Jenkins, Docker and Helm pipelines</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-num">~30%</div>
+        <div class="impact-label"><strong>Less environment setup effort</strong>CallTek · reusable Terraform and Ansible modules</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-num">~20%</div>
+        <div class="impact-label"><strong>Lower compute cost</strong>CallTek · right-sized Kubernetes workloads, no loss of availability</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── PROJECTS ── -->
-<section id="projects">
+<!-- ── OPERATIONS CASE STUDY ── -->
+<section id="operations">
   <div class="wrap">
     <div class="section-label reveal">
-      <span class="section-num">01 · PROJECTS</span>
+      <span class="section-num">01 · FROM THE OPERATIONS FLOOR</span>
       <div class="section-line"></div>
     </div>
-    <h2 class="reveal">Featured Work</h2>
-    <p class="section-subtitle reveal">Real deployed systems — production patterns, not tutorials.</p>
-
-    <div class="filter-tabs reveal" id="proj-filters">
-      <button class="filter-tab active" data-filter="all">All</button>
-      <button class="filter-tab" data-filter="aws">AWS / Cloud</button>
-      <button class="filter-tab" data-filter="mlops">MLOps / AI</button>
-    </div>
-
-    <!-- Project 1 -->
-    <div class="project reveal" data-tags="aws">
-      <!-- Banner: CI/CD pipeline visualization -->
-      <div class="project-banner">
-        <div class="pb-bg"></div>
-        <div class="pb-grid"></div>
-        <div class="pb-glow" style="background:radial-gradient(ellipse,rgba(107,159,255,0.08) 0%,transparent 70%)"></div>
-        <div class="pb-packet"></div>
-        <div class="pb-packet p2"></div>
-        <div class="pb-packet p3"></div>
-        <div class="pb-pipeline">
-          <div class="pb-node"><div class="pb-node-box">GitHub</div></div>
-          <div class="pb-arrow">→</div>
-          <div class="pb-node"><div class="pb-node-box b">GH Actions</div></div>
-          <div class="pb-arrow">→</div>
-          <div class="pb-node"><div class="pb-node-box o">OIDC Auth</div></div>
-          <div class="pb-arrow">→</div>
-          <div class="pb-node"><div class="pb-node-box b">API Gateway</div></div>
-          <div class="pb-arrow">→</div>
-          <div class="pb-node"><div class="pb-node-box o">Lambda</div></div>
-          <div class="pb-arrow">→</div>
-          <div class="pb-node"><div class="pb-node-box y">DynamoDB</div></div>
-          <div class="pb-arrow">→</div>
-          <div class="pb-node"><div class="pb-node-box p">CloudFront</div></div>
+    <h2 class="reveal">The dashboard that hid our SLA breaches</h2>
+    <p class="section-subtitle reveal">A short case study from running BPO support operations. It is the lens I bring to AI in support today.</p>
+    <div class="project reveal">
+      <span class="label-tag pro">Professional experience · Bell Canada · 2020 to 2022</span>
+      <div class="case-grid">
+        <div class="case-block">
+          <h4>Context</h4>
+          <p>A support operation that grew from a 176-agent team I managed directly to 900+ BPO agents across several lines of business, all measured on service level agreements (SLAs).</p>
+        </div>
+        <div class="case-block">
+          <h4>Problem</h4>
+          <p>Leaders saw performance through lagging, manually built reports. By the time a breach showed up, the day was already lost, and the same tier-1 bottlenecks kept repeating.</p>
+        </div>
+        <div class="case-block">
+          <h4>What I did</h4>
+          <ul>
+            <li>Replaced lagging reports with real-time KPI dashboards</li>
+            <li>Used the data to find and remove recurring tier-1 bottlenecks</li>
+            <li>Redesigned staffing and shift models to cut overtime</li>
+            <li>Worked with IT on monitoring alerts that caught issues before customers did</li>
+          </ul>
+        </div>
+        <div class="case-block">
+          <h4>Result</h4>
+          <p>SLA attainment up 15%, fewer undetected breaches, lower overtime spend, and clear ownership during incidents.</p>
         </div>
       </div>
-      <div class="project-top">
-        <div>
-          <div class="proj-type">// AWS Solutions Architecture + DevOps</div>
-          <h3>AWS Hybrid Architecture Portfolio</h3>
-        </div>
-        <div class="proj-badges">
-          <span class="proj-badge badge-star" id="proj1-stars">★ — stars</span>
-          <span class="proj-badge badge-star" id="proj1-commits">— commits</span>
-        </div>
-      </div>
-      <p class="desc">
-        A set of deployed, production-pattern AWS systems demonstrating Solutions Architect–level design decisions
-        alongside DevOps operational rigor. Each module includes architecture decision records (ADRs)
-        documenting the trade-offs made.
-      </p>
-      <div class="project-kpis">
-        <div class="project-kpi"><div class="project-kpi-num">4</div><div class="project-kpi-label">arch modules</div></div>
-        <div class="project-kpi"><div class="project-kpi-num">0</div><div class="project-kpi-label">long-lived credentials</div></div>
-        <div class="project-kpi"><div class="project-kpi-num">ADR</div><div class="project-kpi-label">per module</div></div>
-        <div class="project-kpi"><div class="project-kpi-num">100%</div><div class="project-kpi-label">IaC provisioned</div></div>
-      </div>
-      <div class="modules">
-        <span class="module green">01 · Serverless API</span>
-        <span class="module blue">02 · Event-Driven Architecture</span>
-        <span class="module orange">03 · Static Site + CDN</span>
-        <span class="module purple">04 · CI/CD with OIDC</span>
-        <span class="module">ADR Decision Records</span>
-      </div>
-      <ul class="project-list">
-        <li>Serverless REST API — API Gateway, Lambda, DynamoDB</li>
-        <li>Event-driven system with SNS, SQS, dead-letter queues</li>
-        <li>Secure static delivery: S3 + CloudFront, private origins</li>
-        <li>GitHub Actions OIDC — zero long-lived AWS credentials</li>
-        <li>Architecture decisions documented per module</li>
-        <li>Deployed and tested against real AWS services</li>
-      </ul>
-      <div class="project-footer">
-        <div class="stack-chips">
-          <span class="s-chip">API Gateway</span><span class="s-chip">Lambda</span><span class="s-chip">DynamoDB</span>
-          <span class="s-chip">SNS/SQS</span><span class="s-chip">S3</span><span class="s-chip">CloudFront</span>
-          <span class="s-chip">GitHub Actions</span><span class="s-chip">OIDC</span>
-        </div>
-        <a class="link-out" href="https://github.com/threejay20/aws-hybrid-architecture-portfolio" target="_blank" rel="noopener">
-          View on GitHub <span>→</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="project reveal" data-tags="mlops">
-      <!-- Banner: ML pipeline visualization -->
-      <div class="project-banner">
-        <div class="pb-bg"></div>
-        <div class="pb-grid"></div>
-        <div class="pb-glow" style="background:radial-gradient(ellipse,rgba(192,132,252,0.08) 0%,transparent 70%)"></div>
-        <div class="pb-packet" style="background:var(--accent3);box-shadow:0 0 8px var(--accent3),0 0 16px var(--accent3)"></div>
-        <div class="pb-packet p2" style="background:var(--accent);box-shadow:0 0 8px var(--accent),0 0 16px var(--accent)"></div>
-        <div class="pb-packet p3"></div>
-        <div class="pb-pipeline">
-          <div class="pb-node"><div class="pb-node-box b">Docker</div></div>
-          <div class="pb-arrow">→</div>
-          <div class="pb-node"><div class="pb-node-box g">Ollama</div></div>
-          <div class="pb-arrow">→</div>
-          <div class="pb-node"><div class="pb-node-box p">RAG / LangChain</div></div>
-          <div class="pb-arrow">→</div>
-          <div class="pb-node"><div class="pb-node-box o">FastAPI Agent</div></div>
-          <div class="pb-arrow">→</div>
-          <div class="pb-node"><div class="pb-node-box p">Prometheus</div></div>
-          <div class="pb-arrow">→</div>
-          <div class="pb-node"><div class="pb-node-box b">React UI</div></div>
-        </div>
-      </div>
-      <div class="project-top">
-        <div>
-          <div class="proj-type">// MLOps / LLMOps Platform Engineering</div>
-          <h3>LLMOps Reference Platform</h3>
-        </div>
-        <div class="proj-badges">
-          <span class="proj-badge badge-ai" id="proj2-stars">6 stages</span>
-          <span class="proj-badge badge-ai">LLMOps platform</span>
-        </div>
-      </div>
-      <p class="desc">
-        End-to-end LLMOps platform built to production deployment standards: model serving, RAG pipelines
-        with vector search, CI/CD-gated evaluation, Prometheus observability, and multi-agent
-        orchestration — deployed on containerized infrastructure reflecting enterprise AI patterns.
-      </p>
-      <div class="project-kpis">
-        <div class="project-kpi"><div class="project-kpi-num">6</div><div class="project-kpi-label">MLOps stages</div></div>
-        <div class="project-kpi"><div class="project-kpi-num">0</div><div class="project-kpi-label">external API calls</div></div>
-        <div class="project-kpi"><div class="project-kpi-num">Live</div><div class="project-kpi-label">WebSocket UI</div></div>
-        <div class="project-kpi"><div class="project-kpi-num">Eval</div><div class="project-kpi-label">CI pipeline</div></div>
-      </div>
-      <div class="modules">
-        <span class="module green">Stage 1 · Model Serving</span>
-        <span class="module blue">Stage 2 · RAG Pipeline</span>
-        <span class="module purple">Stage 2.5 · DevOps AI Agent</span>
-        <span class="module orange">Stage 3 · CI/CD for AI</span>
-        <span class="module green">Stage 4 · Observability</span>
-        <span class="module blue">Stage 5–6 · Multi-Agent UI</span>
-        <span class="module">Security Hardening</span>
-      </div>
-      <ul class="project-list">
-        <li>Full LLMOps lifecycle: model serving, RAG, CI/CD evaluation, and observability</li>
-        <li>Zero external API dependency — local inference via Ollama with MLflow experiment tracking</li>
-        <li>DevOps AI agent with Docker socket access for container orchestration via natural language</li>
-        <li>CI/CD evaluation gate: automated pytest eval suite runs on every model or prompt change</li>
-        <li>Production observability: Prometheus, Grafana, and Evidently AI for model drift monitoring</li>
-        <li>Multi-agent orchestration with streaming React/WebSocket UI</li>
-      </ul>
-      <div class="project-footer">
-        <div class="stack-chips">
-          <span class="s-chip">Docker</span><span class="s-chip">Python</span><span class="s-chip">LangChain</span>
-          <span class="s-chip">Qdrant</span><span class="s-chip">Ollama</span><span class="s-chip">Prometheus</span>
-          <span class="s-chip">Grafana</span><span class="s-chip">React</span><span class="s-chip">FastAPI</span>
-        </div>
-        <a class="link-out" href="https://github.com/threejay20/homelab-ai-stack" target="_blank" rel="noopener">
-          View on GitHub <span>→</span>
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── INFRASTRUCTURE LAB ── -->
-<section id="infra-lab">
-  <div class="wrap">
-    <div class="section-label reveal">
-      <span class="section-num">02 · INFRASTRUCTURE LAB</span>
-      <div class="section-line"></div>
-    </div>
-    <h2 class="reveal">Live Infrastructure Metrics</h2>
-    <p class="section-subtitle reveal">Real-time simulation of a production Kubernetes cluster — the kind of environment I build and operate.</p>
-
-    <div class="infra-grid">
-
-      <div class="infra-card reveal">
-        <div class="infra-card-head">
-          <span class="infra-label">CPU Utilization</span>
-          <span class="infra-status"><span class="infra-dot"></span>LIVE</span>
-        </div>
-        <div class="infra-value" id="cpu-val">64%</div>
-        <div class="infra-bar"><div class="infra-fill" id="cpu-bar" style="width:64%"></div></div>
-        <div class="infra-sub" id="cpu-sub">3/5 nodes active · EKS prod-cluster</div>
-      </div>
-
-      <div class="infra-card reveal">
-        <div class="infra-card-head">
-          <span class="infra-label">Memory Usage</span>
-          <span class="infra-status"><span class="infra-dot"></span>LIVE</span>
-        </div>
-        <div class="infra-value" id="mem-val">71%</div>
-        <div class="infra-bar"><div class="infra-fill warning" id="mem-bar" style="width:71%"></div></div>
-        <div class="infra-sub" id="mem-sub">11.4 / 16 GiB allocated</div>
-      </div>
-
-      <div class="infra-card reveal">
-        <div class="infra-card-head">
-          <span class="infra-label">Deploy Success Rate</span>
-          <span class="infra-status"><span class="infra-dot"></span>30d</span>
-        </div>
-        <div class="infra-value">98.2%</div>
-        <div class="infra-bar"><div class="infra-fill" style="width:98.2%"></div></div>
-        <div class="infra-sub">147 deployments · 3 rollbacks</div>
-      </div>
-
-      <div class="infra-card reveal">
-        <div class="infra-card-head">
-          <span class="infra-label">Container Health</span>
-          <span class="infra-status"><span class="infra-dot"></span>LIVE</span>
-        </div>
-        <div class="infra-value" id="pod-val">12/12</div>
-        <div class="infra-bar"><div class="infra-fill" id="pod-bar" style="width:100%"></div></div>
-        <div class="infra-sub" id="pod-sub">All pods running · 0 restarts (1h)</div>
-      </div>
-
-      <div class="infra-card reveal">
-        <div class="infra-card-head">
-          <span class="infra-label">Pipeline Queue</span>
-          <span class="infra-status"><span class="infra-dot"></span>JENKINS</span>
-        </div>
-        <div class="pipeline-list" id="pipeline-list">
-          <div class="pipeline-item">
-            <span class="pipeline-name">api-service / main</span>
-            <span class="pipeline-tag tag-pass">✓ PASS</span>
-          </div>
-          <div class="pipeline-item">
-            <span class="pipeline-name">worker / deploy-prod</span>
-            <span class="pipeline-tag tag-run">● RUNNING</span>
-          </div>
-          <div class="pipeline-item">
-            <span class="pipeline-name">infra / terraform-plan</span>
-            <span class="pipeline-tag tag-pass">✓ PASS</span>
-          </div>
-          <div class="pipeline-item">
-            <span class="pipeline-name">ml-pipeline / retrain</span>
-            <span class="pipeline-tag tag-run">● QUEUED</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="infra-card reveal">
-        <div class="infra-card-head">
-          <span class="infra-label">Uptime</span>
-          <span class="infra-status"><span class="infra-dot"></span>LIVE</span>
-        </div>
-        <div class="infra-value" id="uptime-val">99.97%</div>
-        <div class="infra-bar"><div class="infra-fill" style="width:99.97%"></div></div>
-        <div class="infra-sub" id="uptime-sub">Last incident: 47 days ago</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── CLOUD ARCHITECTURE EXPLORER ── -->
-<section id="cloud-arch">
-  <div class="wrap">
-    <div class="section-label reveal">
-      <span class="section-num">03 · ARCHITECTURE EXPLORER</span>
-      <div class="section-line"></div>
-    </div>
-    <h2 class="reveal">Cloud Architecture Explorer</h2>
-    <p class="section-subtitle reveal">Interactive diagram of the AWS Hybrid Architecture Portfolio. Click any service to learn more.</p>
-
-    <div class="arch-container reveal">
-      <div class="arch-tabs" id="arch-tabs">
-        <button class="arch-tab active" data-arch="serverless">Serverless API</button>
-        <button class="arch-tab" data-arch="events">Event-Driven</button>
-        <button class="arch-tab" data-arch="static">Static + CDN</button>
-        <button class="arch-tab" data-arch="cicd">CI/CD OIDC</button>
-      </div>
-      <div class="arch-svg-wrap">
-        <svg id="arch-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit"></svg>
-        <div class="arch-tooltip" id="arch-tooltip"></div>
-      </div>
+      <div class="why-line"><strong>Why it matters now:</strong> AI in support fails for the same reasons my dashboards did. Nobody sees the right number in time, and nobody owns fixing it. I set up the measurement first, then fix the knowledge and workflows behind the AI.</div>
     </div>
   </div>
 </section>
@@ -1213,7 +989,7 @@ section { overflow: hidden; }
 <section id="experience">
   <div class="wrap">
     <div class="section-label reveal">
-      <span class="section-num">04 · EXPERIENCE</span>
+      <span class="section-num">02 · EXPERIENCE</span>
       <div class="section-line"></div>
     </div>
     <h2 class="reveal">Career Timeline</h2>
@@ -1276,7 +1052,7 @@ section { overflow: hidden; }
             <div class="job-dates">Feb 2021 – Mar 2022</div>
           </div>
           <ul>
-            <li>Directed operations spanning 900+ agents across multiple lines of business, maintaining SLA targets for enterprise service delivery. <span class="metric">900+ agents</span></li>
+            <li>Directed BPO support operations spanning 900+ agents across multiple lines of business, maintaining SLA targets for enterprise service delivery. <span class="metric">900+ BPO agents</span></li>
             <li>Identified bottlenecks across tier-1 support workflows using data analytics and reporting. <span class="metric">+15% SLA attainment</span></li>
             <li>Led cross-functional incident response coordination, reducing mean time to resolution across business units.</li>
             <li>Aligned operational reporting with ISO 27001 governance requirements across multiple business units.</li>
@@ -1304,6 +1080,202 @@ section { overflow: hidden; }
   </div>
 </section>
 
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <div class="wrap">
+    <div class="section-label reveal">
+      <span class="section-num">03 · PROJECTS</span>
+      <div class="section-line"></div>
+    </div>
+    <h2 class="reveal">Featured Work</h2>
+    <p class="section-subtitle reveal">Personal projects, built to production patterns. They show how I build; each one says why it matters to a business.</p>
+
+    <div class="filter-tabs reveal" id="proj-filters">
+      <button class="filter-tab active" data-filter="all">All</button>
+      <button class="filter-tab" data-filter="aws">AWS / Cloud</button>
+      <button class="filter-tab" data-filter="mlops">MLOps / AI</button>
+    </div>
+
+    <!-- Project 1 -->
+    <div class="project reveal" data-tags="aws">
+      <!-- Banner: CI/CD pipeline visualization -->
+      <div class="project-banner">
+        <div class="pb-bg"></div>
+        <div class="pb-grid"></div>
+        <div class="pb-glow" style="background:radial-gradient(ellipse,rgba(107,159,255,0.08) 0%,transparent 70%)"></div>
+        <div class="pb-packet"></div>
+        <div class="pb-packet p2"></div>
+        <div class="pb-packet p3"></div>
+        <div class="pb-pipeline">
+          <div class="pb-node"><div class="pb-node-box">GitHub</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box b">GH Actions</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box o">OIDC Auth</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box b">API Gateway</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box o">Lambda</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box y">DynamoDB</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box p">CloudFront</div></div>
+        </div>
+      </div>
+      <div class="project-top">
+        <div>
+          <span class="label-tag">Personal project</span>
+          <div class="proj-type">// AWS Solutions Architecture + DevOps</div>
+          <h3>AWS Hybrid Architecture Portfolio</h3>
+        </div>
+        <div class="proj-badges">
+          <span class="proj-badge badge-star" id="proj1-stars">★ — stars</span>
+          <span class="proj-badge badge-star" id="proj1-commits">— commits</span>
+        </div>
+      </div>
+      <p class="desc">
+        A set of deployed, production-pattern AWS systems demonstrating Solutions Architect–level design decisions
+        alongside DevOps operational rigor. Each module includes architecture decision records (ADRs)
+        documenting the trade-offs made.
+      </p>
+      <div class="why-line"><strong>Why it matters to a business:</strong> secure by default. No long-lived cloud credentials to leak, and every environment rebuilt from code, so changes are reviewable and repeatable.</div>
+      <div class="project-kpis">
+        <div class="project-kpi"><div class="project-kpi-num">4</div><div class="project-kpi-label">arch modules</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">0</div><div class="project-kpi-label">long-lived credentials</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">ADR</div><div class="project-kpi-label">per module</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">100%</div><div class="project-kpi-label">IaC provisioned</div></div>
+      </div>
+      <div class="modules">
+        <span class="module green">01 · Serverless API</span>
+        <span class="module blue">02 · Event-Driven Architecture</span>
+        <span class="module orange">03 · Static Site + CDN</span>
+        <span class="module purple">04 · CI/CD with OIDC</span>
+        <span class="module">ADR Decision Records</span>
+      </div>
+      <ul class="project-list">
+        <li>Serverless REST API — API Gateway, Lambda, DynamoDB</li>
+        <li>Event-driven system with SNS, SQS, dead-letter queues</li>
+        <li>Secure static delivery: S3 + CloudFront, private origins</li>
+        <li>GitHub Actions OIDC — zero long-lived AWS credentials</li>
+        <li>Architecture decisions documented per module</li>
+        <li>Deployed and tested against real AWS services</li>
+      </ul>
+      <div class="project-footer">
+        <div class="stack-chips">
+          <span class="s-chip">API Gateway</span><span class="s-chip">Lambda</span><span class="s-chip">DynamoDB</span>
+          <span class="s-chip">SNS/SQS</span><span class="s-chip">S3</span><span class="s-chip">CloudFront</span>
+          <span class="s-chip">GitHub Actions</span><span class="s-chip">OIDC</span>
+        </div>
+        <a class="link-out" href="https://github.com/threejay20/aws-hybrid-architecture-portfolio" target="_blank" rel="noopener">
+          View on GitHub <span>→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project reveal" data-tags="mlops">
+      <!-- Banner: ML pipeline visualization -->
+      <div class="project-banner">
+        <div class="pb-bg"></div>
+        <div class="pb-grid"></div>
+        <div class="pb-glow" style="background:radial-gradient(ellipse,rgba(192,132,252,0.08) 0%,transparent 70%)"></div>
+        <div class="pb-packet" style="background:var(--accent3);box-shadow:0 0 8px var(--accent3),0 0 16px var(--accent3)"></div>
+        <div class="pb-packet p2" style="background:var(--accent);box-shadow:0 0 8px var(--accent),0 0 16px var(--accent)"></div>
+        <div class="pb-packet p3"></div>
+        <div class="pb-pipeline">
+          <div class="pb-node"><div class="pb-node-box b">Docker</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box g">Ollama</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box p">RAG / LangChain</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box o">FastAPI Agent</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box p">Prometheus</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box b">React UI</div></div>
+        </div>
+      </div>
+      <div class="project-top">
+        <div>
+          <span class="label-tag">Personal project</span>
+          <div class="proj-type">// MLOps / LLMOps Platform Engineering</div>
+          <h3>LLMOps Reference Platform</h3>
+        </div>
+        <div class="proj-badges">
+          <span class="proj-badge badge-ai" id="proj2-stars">6 stages</span>
+          <span class="proj-badge badge-ai">LLMOps platform</span>
+        </div>
+      </div>
+      <p class="desc">
+        End-to-end LLMOps platform built to production deployment standards: model serving, RAG pipelines
+        with vector search, CI/CD-gated evaluation, Prometheus observability, and multi-agent
+        orchestration — deployed on containerized infrastructure reflecting enterprise AI patterns.
+      </p>
+      <div class="why-line"><strong>Why it matters to a business:</strong> AI answers are tested before anyone sees them. A 32-test evaluation suite runs on every model or prompt change, the same discipline support teams need before an AI agent talks to customers.</div>
+      <div class="project-kpis">
+        <div class="project-kpi"><div class="project-kpi-num">6</div><div class="project-kpi-label">MLOps stages</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">Local</div><div class="project-kpi-label">first inference</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">Live</div><div class="project-kpi-label">WebSocket UI</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">Eval</div><div class="project-kpi-label">CI pipeline</div></div>
+      </div>
+      <div class="modules">
+        <span class="module green">Stage 1 · Model Serving</span>
+        <span class="module blue">Stage 2 · RAG Pipeline</span>
+        <span class="module purple">Stage 2.5 · DevOps AI Agent</span>
+        <span class="module orange">Stage 3 · CI/CD for AI</span>
+        <span class="module green">Stage 4 · Observability</span>
+        <span class="module blue">Stage 5–6 · Multi-Agent UI</span>
+        <span class="module">Security Hardening</span>
+      </div>
+      <ul class="project-list">
+        <li>Full LLMOps lifecycle: model serving, RAG, CI/CD evaluation, and observability</li>
+        <li>Local-first inference via Ollama, with optional fallback to Amazon Bedrock; MLflow experiment tracking</li>
+        <li>DevOps AI agent with Docker socket access for container orchestration via natural language</li>
+        <li>CI/CD evaluation gate: automated pytest eval suite runs on every model or prompt change</li>
+        <li>Production observability: Prometheus, Grafana, and Evidently AI for model drift monitoring</li>
+        <li>Multi-agent orchestration with streaming React/WebSocket UI</li>
+      </ul>
+      <div class="project-footer">
+        <div class="stack-chips">
+          <span class="s-chip">Docker</span><span class="s-chip">Python</span><span class="s-chip">LangChain</span>
+          <span class="s-chip">Qdrant</span><span class="s-chip">Ollama</span><span class="s-chip">Prometheus</span>
+          <span class="s-chip">Grafana</span><span class="s-chip">React</span><span class="s-chip">FastAPI</span>
+        </div>
+        <a class="link-out" href="https://github.com/threejay20/homelab-ai-stack" target="_blank" rel="noopener">
+          View on GitHub <span>→</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CLOUD ARCHITECTURE EXPLORER ── -->
+<section id="cloud-arch">
+  <div class="wrap">
+    <div class="section-label reveal">
+      <span class="section-num">04 · ARCHITECTURE EXPLORER</span>
+      <div class="section-line"></div>
+    </div>
+    <h2 class="reveal">Cloud Architecture Explorer</h2>
+    <p class="section-subtitle reveal">Interactive diagram of the AWS Hybrid Architecture Portfolio. Click any service to learn more.</p>
+
+    <div class="arch-container reveal">
+      <div class="arch-tabs" id="arch-tabs">
+        <button class="arch-tab active" data-arch="serverless">Serverless API</button>
+        <button class="arch-tab" data-arch="events">Event-Driven</button>
+        <button class="arch-tab" data-arch="static">Static + CDN</button>
+        <button class="arch-tab" data-arch="cicd">CI/CD OIDC</button>
+      </div>
+      <div class="arch-svg-wrap">
+        <svg id="arch-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit"></svg>
+        <div class="arch-tooltip" id="arch-tooltip"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── SKILLS ── -->
 <section id="skills">
   <div class="wrap">
@@ -1311,10 +1283,23 @@ section { overflow: hidden; }
       <span class="section-num">05 · SKILLS</span>
       <div class="section-line"></div>
     </div>
-    <h2 class="reveal">Technical Toolkit</h2>
-    <p class="section-subtitle reveal">Hover to explore. Every tool here has production mileage behind it.</p>
+    <h2 class="reveal">Toolkit</h2>
+    <p class="section-subtitle reveal">Operations and engineering skills come from professional roles; AI tooling comes from my personal projects.</p>
 
     <div class="skills-cloud reveal" id="skills-cloud">
+      <!-- Support operations (teal) -->
+      <span class="skill-pill cat-ops"><span class="pill-dot pd-teal"></span>SLA Management</span>
+      <span class="skill-pill cat-ops"><span class="pill-dot pd-teal"></span>Real-time KPI Dashboards</span>
+      <span class="skill-pill cat-ops"><span class="pill-dot pd-teal"></span>Staffing &amp; Shift Models</span>
+      <span class="skill-pill cat-ops"><span class="pill-dot pd-teal"></span>Agent Training &amp; Coaching</span>
+      <span class="skill-pill cat-ops"><span class="pill-dot pd-teal"></span>Incident Response</span>
+      <span class="skill-pill cat-ops"><span class="pill-dot pd-teal"></span>ISO 27001 Reporting</span>
+      <!-- AI (pink) -->
+      <span class="skill-pill cat-ai"><span class="pill-dot pd-pink"></span>Amazon Bedrock</span>
+      <span class="skill-pill cat-ai"><span class="pill-dot pd-pink"></span>RAG Pipelines</span>
+      <span class="skill-pill cat-ai"><span class="pill-dot pd-pink"></span>Vector Search (Qdrant)</span>
+      <span class="skill-pill cat-ai"><span class="pill-dot pd-pink"></span>LLM Evaluation</span>
+      <span class="skill-pill cat-ai"><span class="pill-dot pd-pink"></span>Multi-agent Orchestration</span>
       <!-- Cloud & Containers (green) -->
       <span class="skill-pill cat-cloud"><span class="pill-dot pd-green"></span>AWS EKS</span>
       <span class="skill-pill cat-cloud"><span class="pill-dot pd-green"></span>IAM</span>
@@ -1352,6 +1337,8 @@ section { overflow: hidden; }
     </div>
 
     <div class="skills-legend reveal">
+      <div class="legend-item"><span class="pill-dot pd-teal" style="width:8px;height:8px;border-radius:50%;display:inline-block"></span>Support Operations</div>
+      <div class="legend-item"><span class="pill-dot pd-pink" style="width:8px;height:8px;border-radius:50%;display:inline-block"></span>AI (personal projects)</div>
       <div class="legend-item"><span class="pill-dot pd-green" style="width:8px;height:8px;border-radius:50%;display:inline-block"></span>Cloud &amp; Containers</div>
       <div class="legend-item"><span class="pill-dot pd-blue" style="width:8px;height:8px;border-radius:50%;display:inline-block"></span>IaC &amp; Orchestration</div>
       <div class="legend-item"><span class="pill-dot pd-purple" style="width:8px;height:8px;border-radius:50%;display:inline-block"></span>Observability</div>
@@ -1376,6 +1363,11 @@ section { overflow: hidden; }
         <div class="edu-org">Amazon Web Services</div>
       </div>
       <div class="edu-card reveal">
+        <div class="edu-icon">🧠</div>
+        <div class="edu-name">AWS Certified Generative AI Developer — Professional (in progress)</div>
+        <div class="edu-org">Amazon Web Services</div>
+      </div>
+      <div class="edu-card reveal">
         <div class="edu-icon">🎓</div>
         <div class="edu-name">Software Development</div>
         <div class="edu-org">Bell University</div>
@@ -1397,10 +1389,11 @@ section { overflow: hidden; }
 <!-- ── FOOTER / CONTACT ── -->
 <footer id="contact">
   <div class="wrap">
-    <div class="foot-cta reveal">Let's <span class="g">build something</span>.</div>
-    <p class="foot-sub reveal">Open to Senior DevOps, Platform Engineering, and SRE roles — remote or on-site.</p>
+    <div class="foot-cta reveal">Is your support AI <span class="g">pulling its weight</span>?</div>
+    <p class="foot-sub reveal">I am taking on a small number of founding clients for a two-week support automation diagnostic.</p>
     <div class="foot-links reveal">
-      <a class="foot-link primary" href="mailto:justinjjohnson20@gmail.com">✉ justinjjohnson20@gmail.com</a>
+      <a class="foot-link primary" href="consulting/">Work with me →</a>
+      <a class="foot-link" href="mailto:justinjjohnson20@gmail.com">✉ justinjjohnson20@gmail.com</a>
       <a class="foot-link" href="https://github.com/threejay20" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
         threejay20
@@ -1410,7 +1403,7 @@ section { overflow: hidden; }
         justinjjohnson1
       </a>
     </div>
-    <div class="foot-meta reveal"><span>+63 960 459 2278</span> · © 2026 Justin Johnson · <a href="https://threejay20.github.io" style="color:var(--text-muted)">threejay20.github.io</a></div>
+    <div class="foot-meta reveal">© 2026 Justin Johnson · <a href="https://threejay20.github.io" style="color:var(--text-muted)">threejay20.github.io</a></div>
   </div>
 </footer>
 
@@ -1757,39 +1750,6 @@ document.querySelectorAll('.filter-tab').forEach(btn => {
 });
 
 /* ══════════════════════════════════════════════
-   INFRASTRUCTURE LAB — LIVE METRICS
-══════════════════════════════════════════════ */
-function rand(min, max) { return Math.round(min + Math.random() * (max - min)); }
-
-function updateInfra() {
-  const cpu = rand(45, 82);
-  const mem = rand(58, 85);
-  const pods = [11, 12, 12, 12][rand(0, 3)];
-
-  const cpuEl = document.getElementById('cpu-val');
-  const cpuBar = document.getElementById('cpu-bar');
-  if (cpuEl) { cpuEl.textContent = cpu + '%'; cpuBar.style.width = cpu + '%'; }
-  if (cpu > 75) { cpuBar.classList.add('warning'); } else { cpuBar.classList.remove('warning'); }
-
-  const memEl = document.getElementById('mem-val');
-  const memBar = document.getElementById('mem-bar');
-  if (memEl) { memEl.textContent = mem + '%'; memBar.style.width = mem + '%'; }
-
-  const podEl = document.getElementById('pod-val');
-  if (podEl) {
-    podEl.textContent = pods + '/12';
-    document.getElementById('pod-bar').style.width = (pods / 12 * 100) + '%';
-    document.getElementById('pod-sub').textContent = pods === 12 ? 'All pods running · 0 restarts (1h)' : `${12 - pods} pod(s) restarting`;
-  }
-
-  const uptime = (99.90 + Math.random() * 0.09).toFixed(2);
-  const el = document.getElementById('uptime-val');
-  if (el) el.textContent = uptime + '%';
-}
-
-setInterval(updateInfra, 3000);
-
-/* ══════════════════════════════════════════════
    CLOUD ARCHITECTURE EXPLORER
 ══════════════════════════════════════════════ */
 const archDefs = {
@@ -2088,10 +2048,11 @@ if (cloud) skillObs.observe(cloud);
    COMMAND PALETTE
 ══════════════════════════════════════════════ */
 const cmdItems = [
+  { icon: '🤝', text: 'Work With Me',     hint: 'consulting', action: () => { window.location.href = 'consulting/'; } },
   { icon: '🏠', text: 'Go to Top',        hint: 'hero',       action: () => window.scrollTo({top:0,behavior:'smooth'}) },
   { icon: '📊', text: 'Impact Numbers',   hint: '#impact',    action: () => document.querySelector('#impact')?.scrollIntoView({behavior:'smooth'}) },
   { icon: '🚀', text: 'Projects',         hint: '#projects',  action: () => document.querySelector('#projects')?.scrollIntoView({behavior:'smooth'}) },
-  { icon: '🖥️', text: 'Infrastructure Lab', hint: '#infra-lab', action: () => document.querySelector('#infra-lab')?.scrollIntoView({behavior:'smooth'}) },
+  { icon: '📋', text: 'Operations Case Study', hint: '#operations', action: () => document.querySelector('#operations')?.scrollIntoView({behavior:'smooth'}) },
   { icon: '🏗️', text: 'Architecture Explorer', hint: '#cloud-arch', action: () => document.querySelector('#cloud-arch')?.scrollIntoView({behavior:'smooth'}) },
   { icon: '💼', text: 'Experience',       hint: '#experience', action: () => document.querySelector('#experience')?.scrollIntoView({behavior:'smooth'}) },
   { icon: '🛠️', text: 'Skills',           hint: '#skills',    action: () => document.querySelector('#skills')?.scrollIntoView({behavior:'smooth'}) },
