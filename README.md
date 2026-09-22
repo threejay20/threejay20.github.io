@@ -9,7 +9,7 @@ Personal site of Justin Johnson: support operations automation and cloud enginee
 | Path | What it is |
 | --- | --- |
 | `index.html` | Portfolio: impact, an operations case study, career timeline, personal projects, skills and credentials |
-| `consulting/index.html` | Work with me: the support automation diagnostic, AI resolution sprint and ongoing optimisation |
+| `consulting/index.html` | Work with me: the support operations diagnostic, operations improvement sprint and ongoing optimisation |
 | `og-image.png` | 1200 x 630 preview image used when the site is shared on LinkedIn and other platforms |
 
 ## How it is built
