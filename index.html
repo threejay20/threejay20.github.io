@@ -1092,8 +1092,81 @@ section { overflow: hidden; }
 
     <div class="filter-tabs reveal" id="proj-filters">
       <button class="filter-tab active" data-filter="all">All</button>
+      <button class="filter-tab" data-filter="support">Support Operations</button>
       <button class="filter-tab" data-filter="aws">AWS / Cloud</button>
       <button class="filter-tab" data-filter="mlops">MLOps / AI</button>
+    </div>
+
+    <!-- Project: support ticket diagnostic -->
+    <div class="project reveal" data-tags="support">
+      <div class="project-banner">
+        <div class="pb-bg"></div>
+        <div class="pb-grid"></div>
+        <div class="pb-glow" style="background:radial-gradient(ellipse,rgba(52,211,153,0.10) 0%,transparent 70%)"></div>
+        <div class="pb-packet"></div>
+        <div class="pb-packet p2"></div>
+        <div class="pb-packet p3"></div>
+        <div class="pb-pipeline">
+          <div class="pb-node"><div class="pb-node-box">Tickets</div></div>
+          <div class="pb-arrow">&rarr;</div>
+          <div class="pb-node"><div class="pb-node-box b">Contact reasons</div></div>
+          <div class="pb-arrow">&rarr;</div>
+          <div class="pb-node"><div class="pb-node-box o">Readable rules</div></div>
+          <div class="pb-arrow">&rarr;</div>
+          <div class="pb-node"><div class="pb-node-box p">Local model</div></div>
+          <div class="pb-arrow">&rarr;</div>
+          <div class="pb-node"><div class="pb-node-box y">Cost model</div></div>
+          <div class="pb-arrow">&rarr;</div>
+          <div class="pb-node"><div class="pb-node-box">Report</div></div>
+        </div>
+      </div>
+      <div class="project-top">
+        <div>
+          <span class="label-tag">Personal project</span>
+          <div class="proj-type">// Support operations + AI automation</div>
+          <h3>Support Ticket Diagnostic</h3>
+        </div>
+      </div>
+      <p class="desc">
+        Reads a support ticket export and answers three questions: what customers contact you about,
+        which of those contacts can be handled without a person, and what the difference is worth per
+        month. The output is one shareable report with every input and its source printed on the page.
+        Sample run on a public dataset of 26,872 support messages.
+      </p>
+      <div class="why-line"><strong>Why it matters to a business:</strong> automation is costed against measured routing accuracy rather than a vendor's assumption that routing is perfect, and the contact reasons that need a person are named as such instead of being automated badly.</div>
+      <div class="project-kpis">
+        <div class="project-kpi"><div class="project-kpi-num">26,872</div><div class="project-kpi-label">tickets classified</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">95.8%</div><div class="project-kpi-label">accuracy on unseen tickets</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">0.9%</div><div class="project-kpi-label">held back for a person</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">$0</div><div class="project-kpi-label">AI cost per ticket</div></div>
+      </div>
+      <div class="modules">
+        <span class="module green">01 &middot; Contact reason taxonomy</span>
+        <span class="module blue">02 &middot; Rules a client can edit</span>
+        <span class="module purple">03 &middot; Local language model</span>
+        <span class="module orange">04 &middot; Cost model</span>
+        <span class="module">Decision records</span>
+      </div>
+      <ul class="project-list">
+        <li>27 raw intents grouped into 16 contact reasons, each tagged by how it should be resolved</li>
+        <li>Readable rules classify 88.1% correctly on held-out tickets, four passes to get there</li>
+        <li>A local model handles only what the rules cannot match, taking the total to 95.8%</li>
+        <li>Weak matches are held for a person rather than guessed, so confident misrouting stays rare</li>
+        <li>Containment targets are cut by measured accuracy, so the business case never assumes perfect routing</li>
+        <li>Every assumption, limitation and reversed decision is recorded in the repository</li>
+      </ul>
+      <div class="project-footer">
+        <div class="stack-chips">
+          <span class="s-chip">Python</span><span class="s-chip">pandas</span><span class="s-chip">sentence-transformers</span>
+          <span class="s-chip">matplotlib</span><span class="s-chip">Jinja2</span><span class="s-chip">CSV-driven config</span>
+        </div>
+        <a class="link-out" href="work/ticket-diagnostic/">
+          See the sample report <span>&rarr;</span>
+        </a>
+        <a class="link-out" href="https://github.com/threejay20/ticket-diagnostic" target="_blank" rel="noopener">
+          View on GitHub <span>&rarr;</span>
+        </a>
+      </div>
     </div>
 
     <!-- Project 1 -->
