@@ -1094,6 +1094,7 @@ section { overflow: hidden; }
       <button class="filter-tab active" data-filter="all">All</button>
       <button class="filter-tab" data-filter="support">Support Operations</button>
       <button class="filter-tab" data-filter="aws">AWS / Cloud</button>
+      <button class="filter-tab" data-filter="azure">Azure / Cloud</button>
       <button class="filter-tab" data-filter="mlops">MLOps / AI</button>
     </div>
 
@@ -1240,6 +1241,76 @@ section { overflow: hidden; }
           <span class="s-chip">GitHub Actions</span><span class="s-chip">OIDC</span>
         </div>
         <a class="link-out" href="https://github.com/threejay20/aws-hybrid-architecture-portfolio" target="_blank" rel="noopener">
+          View on GitHub <span>→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Project: Azure Terraform pipeline with OIDC -->
+    <div class="project reveal" data-tags="azure">
+      <!-- Banner: pull request to Azure pipeline -->
+      <div class="project-banner">
+        <div class="pb-bg"></div>
+        <div class="pb-grid"></div>
+        <div class="pb-glow" style="background:radial-gradient(ellipse,rgba(61,217,170,0.08) 0%,transparent 70%)"></div>
+        <div class="pb-packet"></div>
+        <div class="pb-packet p2"></div>
+        <div class="pb-packet p3"></div>
+        <div class="pb-pipeline">
+          <div class="pb-node"><div class="pb-node-box">Pull Request</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box b">GH Actions</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box o">OIDC · Entra ID</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box y">Approval Gate</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box p">Terraform</div></div>
+          <div class="pb-arrow">→</div>
+          <div class="pb-node"><div class="pb-node-box g">Azure</div></div>
+        </div>
+      </div>
+      <div class="project-top">
+        <div>
+          <span class="label-tag">Personal project</span>
+          <div class="proj-type">// Azure DevOps + Platform Engineering</div>
+          <h3>Azure Terraform Pipeline with OIDC</h3>
+        </div>
+      </div>
+      <p class="desc">
+        A GitHub Actions pipeline that builds Azure infrastructure with Terraform without storing a single password.
+        Every pull request gets a security scan and a Terraform plan posted for review, and production changes
+        wait for a person to approve them.
+      </p>
+      <div class="why-line"><strong>Why it matters to a business:</strong> every infrastructure change is reviewed, approved and traceable, with no stored credentials to leak. Changes made by hand outside the pipeline are caught and reversed.</div>
+      <div class="project-kpis">
+        <div class="project-kpi"><div class="project-kpi-num">0</div><div class="project-kpi-label">stored secrets</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">PR</div><div class="project-kpi-label">plan posted for review</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">1</div><div class="project-kpi-label">approver before prod</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">Drift</div><div class="project-kpi-label">detected and reverted</div></div>
+      </div>
+      <div class="modules">
+        <span class="module green">01 · OIDC Sign-in</span>
+        <span class="module blue">02 · Plan on Pull Request</span>
+        <span class="module orange">03 · Approval Gate</span>
+        <span class="module purple">04 · Locked Remote State</span>
+        <span class="module">Drift Detection</span>
+      </div>
+      <ul class="project-list">
+        <li>Workload identity federation, no secrets in GitHub</li>
+        <li>Least-privilege identity scoped to one resource group</li>
+        <li>Format check, Checkov scan and plan on every PR</li>
+        <li>Protected prod environment with a required approver</li>
+        <li>State in Azure Storage: keyless, versioned, locked</li>
+        <li>Drift caught by plan and traced in the Activity Log</li>
+      </ul>
+      <div class="project-footer">
+        <div class="stack-chips">
+          <span class="s-chip">Terraform</span><span class="s-chip">azurerm</span><span class="s-chip">GitHub Actions</span>
+          <span class="s-chip">OIDC</span><span class="s-chip">Entra ID</span><span class="s-chip">Azure Storage</span>
+          <span class="s-chip">Azure Networking</span><span class="s-chip">Checkov</span>
+        </div>
+        <a class="link-out" href="https://github.com/threejay20/azure-tf-oidc-lab" target="_blank" rel="noopener">
           View on GitHub <span>→</span>
         </a>
       </div>
