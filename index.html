@@ -1092,10 +1092,83 @@ section { overflow: hidden; }
 
     <div class="filter-tabs reveal" id="proj-filters">
       <button class="filter-tab active" data-filter="all">All</button>
+      <button class="filter-tab" data-filter="kubernetes">Java / Kubernetes</button>
       <button class="filter-tab" data-filter="support">Support Operations</button>
       <button class="filter-tab" data-filter="aws">AWS / Cloud</button>
       <button class="filter-tab" data-filter="azure">Azure / Cloud</button>
       <button class="filter-tab" data-filter="mlops">MLOps / AI</button>
+    </div>
+
+    <!-- Project: Spring Boot service to production -->
+    <div class="project reveal" data-tags="kubernetes">
+      <div class="project-banner">
+        <div class="pb-bg"></div>
+        <div class="pb-grid"></div>
+        <div class="pb-glow" style="background:radial-gradient(ellipse,rgba(107,159,255,0.10) 0%,transparent 70%)"></div>
+        <div class="pb-packet"></div>
+        <div class="pb-packet p2"></div>
+        <div class="pb-packet p3"></div>
+        <div class="pb-pipeline">
+          <div class="pb-node"><div class="pb-node-box">Spring Boot</div></div>
+          <div class="pb-arrow">&rarr;</div>
+          <div class="pb-node"><div class="pb-node-box o">Maven</div></div>
+          <div class="pb-arrow">&rarr;</div>
+          <div class="pb-node"><div class="pb-node-box b">Docker</div></div>
+          <div class="pb-arrow">&rarr;</div>
+          <div class="pb-node"><div class="pb-node-box p">GH Actions</div></div>
+          <div class="pb-arrow">&rarr;</div>
+          <div class="pb-node"><div class="pb-node-box y">Helm</div></div>
+          <div class="pb-arrow">&rarr;</div>
+          <div class="pb-node"><div class="pb-node-box b">Kubernetes</div></div>
+          <div class="pb-arrow">&rarr;</div>
+          <div class="pb-node"><div class="pb-node-box">Kafka</div></div>
+        </div>
+      </div>
+      <div class="project-top">
+        <div>
+          <span class="label-tag">Personal project</span>
+          <div class="proj-type">// Java + Kubernetes + Platform Engineering</div>
+          <h3>Spring Boot Service to Production</h3>
+        </div>
+      </div>
+      <p class="desc">
+        Takes a Java Spring Boot service the whole way to production: a Maven build, a small container image,
+        a Helm chart on Kubernetes that rolls out new versions with no failed requests, a pipeline that publishes
+        every tested commit, and a Kafka lab for event streaming. Each stage was tested on purpose, including
+        breaking things to measure what goes wrong.
+      </p>
+      <div class="why-line"><strong>Why it matters to a business:</strong> customers keep getting answers while new versions ship, Java services don't get killed for running out of memory, and only tested code ever reaches the image registry.</div>
+      <div class="project-kpis">
+        <div class="project-kpi"><div class="project-kpi-num">0 / 289</div><div class="project-kpi-label">requests failed in a rollout</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">18 / 114</div><div class="project-kpi-label">failed without probes</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">138 MB</div><div class="project-kpi-label">Java runtime image</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">&lt; 2 min</div><div class="project-kpi-label">pipeline per commit</div></div>
+      </div>
+      <div class="modules">
+        <span class="module green">01 &middot; Build</span>
+        <span class="module blue">02 &middot; Containerise</span>
+        <span class="module purple">03 &middot; Deploy</span>
+        <span class="module orange">04 &middot; Automate</span>
+        <span class="module">05 &middot; Stream (Kafka)</span>
+      </div>
+      <ul class="project-list">
+        <li>Multi-stage Dockerfile: Maven and the JDK build the app, only the JRE and JAR ship, running as a non-root user</li>
+        <li>Reproduced an OOMKill (exit code 137) in a 256 MB container, then fixed it with container-aware heap sizing</li>
+        <li>Helm chart with startup, readiness and liveness probes, graceful shutdown and atomic rollback</li>
+        <li>GitHub Actions builds, tests and checks the chart, then publishes images tagged by commit</li>
+        <li>Kafka lab on consumer groups and lag, including a hot partition caused by key skew</li>
+        <li>Every result is written up in the repository, with commands to reproduce it</li>
+      </ul>
+      <div class="project-footer">
+        <div class="stack-chips">
+          <span class="s-chip">Java</span><span class="s-chip">Spring Boot</span><span class="s-chip">Maven</span>
+          <span class="s-chip">Docker</span><span class="s-chip">Kubernetes</span><span class="s-chip">Helm</span>
+          <span class="s-chip">GitHub Actions</span><span class="s-chip">GHCR</span><span class="s-chip">Kafka</span>
+        </div>
+        <a class="link-out" href="https://github.com/threejay20/spring-boot-devops-lab" target="_blank" rel="noopener">
+          View on GitHub <span>&rarr;</span>
+        </a>
+      </div>
     </div>
 
     <!-- Project: support ticket diagnostic -->
