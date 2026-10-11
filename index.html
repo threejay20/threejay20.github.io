@@ -1202,22 +1202,18 @@ section { overflow: hidden; }
           <div class="proj-type">// AWS Solutions Architecture + DevOps</div>
           <h3>AWS Hybrid Architecture Portfolio</h3>
         </div>
-        <div class="proj-badges">
-          <span class="proj-badge badge-star" id="proj1-stars">★ — stars</span>
-          <span class="proj-badge badge-star" id="proj1-commits">— commits</span>
-        </div>
       </div>
       <p class="desc">
-        A set of deployed, production-pattern AWS systems demonstrating Solutions Architect–level design decisions
-        alongside DevOps operational rigor. Each module includes architecture decision records (ADRs)
-        documenting the trade-offs made.
+        Four AWS builds, each documented the way a team would hand it over: architecture, security,
+        operations and teardown notes, with decision records for the key trade-offs. Built and tested in a
+        live AWS account, and the static site deploys through GitHub Actions with OIDC, so no AWS keys are stored.
       </p>
-      <div class="why-line"><strong>Why it matters to a business:</strong> secure by default. No long-lived cloud credentials to leak, and every environment rebuilt from code, so changes are reviewable and repeatable.</div>
+      <div class="why-line"><strong>Why it matters to a business:</strong> every design choice is written down with its trade-offs, and deployments need no stored cloud credentials that could leak.</div>
       <div class="project-kpis">
-        <div class="project-kpi"><div class="project-kpi-num">4</div><div class="project-kpi-label">arch modules</div></div>
-        <div class="project-kpi"><div class="project-kpi-num">0</div><div class="project-kpi-label">long-lived credentials</div></div>
-        <div class="project-kpi"><div class="project-kpi-num">ADR</div><div class="project-kpi-label">per module</div></div>
-        <div class="project-kpi"><div class="project-kpi-num">100%</div><div class="project-kpi-label">IaC provisioned</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">4</div><div class="project-kpi-label">AWS builds</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">0</div><div class="project-kpi-label">stored AWS keys</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">ADRs</div><div class="project-kpi-label">for key trade-offs</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">Teardown</div><div class="project-kpi-label">steps for every build</div></div>
       </div>
       <div class="modules">
         <span class="module green">01 · Serverless API</span>
@@ -1227,12 +1223,12 @@ section { overflow: hidden; }
         <span class="module">ADR Decision Records</span>
       </div>
       <ul class="project-list">
-        <li>Serverless REST API — API Gateway, Lambda, DynamoDB</li>
-        <li>Event-driven system with SNS, SQS, dead-letter queues</li>
-        <li>Secure static delivery: S3 + CloudFront, private origins</li>
-        <li>GitHub Actions OIDC — zero long-lived AWS credentials</li>
-        <li>Architecture decisions documented per module</li>
-        <li>Deployed and tested against real AWS services</li>
+        <li>Serverless REST API on API Gateway, Lambda and DynamoDB, with decision records on Lambda vs EC2 and DynamoDB vs RDS</li>
+        <li>Event-driven system with SNS, SQS and dead-letter queues, with failure handling documented</li>
+        <li>Secure static delivery with S3 and CloudFront, using a private origin</li>
+        <li>GitHub Actions deploys through OIDC, with zero long-lived AWS credentials</li>
+        <li>Security, operations and teardown notes for every build</li>
+        <li>Built and tested in a live AWS account, with screenshots as evidence</li>
       </ul>
       <div class="project-footer">
         <div class="stack-chips">
