@@ -1421,15 +1421,15 @@ section { overflow: hidden; }
       </div>
       <p class="desc">
         End-to-end LLMOps platform built to production deployment standards: model serving, RAG pipelines
-        with vector search, CI/CD-gated evaluation, Prometheus observability, and multi-agent
+        with vector search, a 32-test evaluation suite, Prometheus observability, and multi-agent
         orchestration — deployed on containerized infrastructure reflecting enterprise AI patterns.
       </p>
-      <div class="why-line"><strong>Why it matters to a business:</strong> AI answers are tested before anyone sees them. A 32-test evaluation suite runs on every model or prompt change, the same discipline support teams need before an AI agent talks to customers.</div>
+      <div class="why-line"><strong>Why it matters to a business:</strong> AI answers get tested before anyone relies on them. I wrote a 32-test evaluation suite covering RAG quality, auth and agent routing, the same discipline support teams need before an AI agent talks to customers.</div>
       <div class="project-kpis">
         <div class="project-kpi"><div class="project-kpi-num">6</div><div class="project-kpi-label">MLOps stages</div></div>
         <div class="project-kpi"><div class="project-kpi-num">Local</div><div class="project-kpi-label">first inference</div></div>
         <div class="project-kpi"><div class="project-kpi-num">Live</div><div class="project-kpi-label">WebSocket UI</div></div>
-        <div class="project-kpi"><div class="project-kpi-num">Eval</div><div class="project-kpi-label">CI pipeline</div></div>
+        <div class="project-kpi"><div class="project-kpi-num">32</div><div class="project-kpi-label">pytest tests</div></div>
       </div>
       <div class="modules">
         <span class="module green">Stage 1 · Model Serving</span>
@@ -1441,10 +1441,10 @@ section { overflow: hidden; }
         <span class="module">Security Hardening</span>
       </div>
       <ul class="project-list">
-        <li>Full LLMOps lifecycle: model serving, RAG, CI/CD evaluation, and observability</li>
+        <li>Full LLMOps lifecycle: model serving, RAG, an evaluation test suite, and observability</li>
         <li>Local-first inference via Ollama, with optional fallback to Amazon Bedrock; MLflow experiment tracking</li>
         <li>DevOps AI agent with Docker socket access for container orchestration via natural language</li>
-        <li>CI/CD evaluation gate: automated pytest eval suite runs on every model or prompt change</li>
+        <li>Evaluation suite: 32 pytest tests for RAG quality, auth and agent routing, run locally. GitHub Actions builds the images and checks that the suite collects</li>
         <li>Production observability: Prometheus, Grafana, and Evidently AI for model drift monitoring</li>
         <li>Multi-agent orchestration with streaming React/WebSocket UI</li>
       </ul>
