@@ -803,6 +803,14 @@ section { overflow: hidden; }
   .foot-cta { font-size: 28px; }
   .nav-cmd { display: none; }
 }
+
+.post-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:28px 0 20px}
+.post-card{display:block;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s}
+.post-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.post-card h3{margin:8px 0 6px;font-size:18px;line-height:1.3;color:var(--text)}
+.post-card p{margin:0;color:var(--text-dim);font-size:15px}
+.post-tag{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--accent);text-transform:uppercase}
+@media(max-width:880px){.post-list{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -825,11 +833,10 @@ section { overflow: hidden; }
     <div class="brand" onclick="window.scrollTo({top:0,behavior:'smooth'})">jj<span class="g">.</span>dev</div>
     <ul>
       <li><a href="#impact">Impact</a></li>
-      <li><a href="#operations">Operations</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a class="nav-work" href="consulting/">Consulting</a></li>
+      <li><a href="writing/">Writing</a></li>
       <li>
         <span class="nav-cmd" id="cmd-trigger" title="Command Palette">
           <kbd>⌘</kbd><kbd>K</kbd>
@@ -860,7 +867,7 @@ section { overflow: hidden; }
           <span class="cert-badge">★ AWS Certified Solutions Architect</span>
         </div>
         <p class="lede">
-          I build the CI/CD pipelines, Terraform modules and Kubernetes platforms that let teams ship faster, spend less on cloud and stop firefighting. I have delivered 25% faster deployment cycles, 30% less environment setup effort and 20% lower compute cost. I also build generative AI infrastructure on AWS: Amazon Bedrock, RAG pipelines and LLM evaluation in CI. Before engineering, I directed a 900+ agent operation, so I design systems around incidents, SLAs and the people who run them.
+          I build the CI/CD pipelines, Terraform modules and Kubernetes platforms that let teams ship faster and spend less on cloud. I have delivered 25% faster deployment cycles, 30% less environment setup effort and 20% lower compute cost. Before engineering, I directed a 900+ agent operation, so I design for incidents, SLAs and the people on call.
         </p>
         <div class="hero-stats">
           <div class="stat"><span class="stat-num" data-count="25" data-suffix="%">25%</span><span class="stat-label">faster deployment cycles</span></div>
@@ -907,28 +914,8 @@ section { overflow: hidden; }
       <div class="section-line"></div>
     </div>
     <h2 class="reveal">Outcomes that matter</h2>
-    <p class="section-subtitle reveal">Results from my professional roles. Operations first, because that is where technology has to pay off.</p>
+    <p class="section-subtitle reveal">Results from my professional roles: engineering first, then the operations background behind how I run incidents.</p>
     <div class="impact-strip reveal">
-      <div class="impact-cell">
-        <div class="impact-num">900+</div>
-        <div class="impact-label"><strong>BPO agents directed</strong>Bell Canada · support operation across multiple lines of business</div>
-      </div>
-      <div class="impact-cell">
-        <div class="impact-num">+15%</div>
-        <div class="impact-label"><strong>SLA attainment</strong>Bell Canada · analytics that removed tier-1 support bottlenecks</div>
-      </div>
-      <div class="impact-cell">
-        <div class="impact-num">+30%</div>
-        <div class="impact-label"><strong>Cross-sell close rate</strong>Bell Canada · training program for a 176-agent team</div>
-      </div>
-      <div class="impact-cell">
-        <div class="impact-num">~30%</div>
-        <div class="impact-label"><strong>Fewer failed deployments</strong>Bell Media · automated release pipelines, several releases a week</div>
-      </div>
-      <div class="impact-cell">
-        <div class="impact-num">5+ hrs</div>
-        <div class="impact-label"><strong>Saved per sprint</strong>Bell Media · internal tooling that removed repetitive setup work</div>
-      </div>
       <div class="impact-cell">
         <div class="impact-num">~25%</div>
         <div class="impact-label"><strong>Faster release cycle</strong>CallTek · standardized Jenkins, Docker and Helm pipelines</div>
@@ -941,45 +928,26 @@ section { overflow: hidden; }
         <div class="impact-num">~20%</div>
         <div class="impact-label"><strong>Lower compute cost</strong>CallTek · right-sized Kubernetes workloads, no loss of availability</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── OPERATIONS CASE STUDY ── -->
-<section id="operations">
-  <div class="wrap">
-    <div class="section-label reveal">
-      <span class="section-num">01 · FROM THE OPERATIONS FLOOR</span>
-      <div class="section-line"></div>
-    </div>
-    <h2 class="reveal">The dashboard that hid our SLA breaches</h2>
-    <p class="section-subtitle reveal">Before DevOps, I ran enterprise support operations. This is the lens I bring to on-call, SLAs and incident response.</p>
-    <div class="project reveal">
-      <span class="label-tag pro">Professional experience · Bell Canada · 2020 to 2022</span>
-      <div class="case-grid">
-        <div class="case-block">
-          <h4>Context</h4>
-          <p>A support operation that grew from a 176-agent team I managed directly to 900+ BPO agents across several lines of business, all measured on service level agreements (SLAs).</p>
-        </div>
-        <div class="case-block">
-          <h4>Problem</h4>
-          <p>Leaders saw performance through lagging, manually built reports. By the time a breach showed up, the day was already lost, and the same tier-1 bottlenecks kept repeating.</p>
-        </div>
-        <div class="case-block">
-          <h4>What I did</h4>
-          <ul>
-            <li>Replaced lagging reports with real-time KPI dashboards</li>
-            <li>Used the data to find and remove recurring tier-1 bottlenecks</li>
-            <li>Redesigned staffing and shift models to cut overtime</li>
-            <li>Worked with IT on monitoring alerts that caught issues before customers did</li>
-          </ul>
-        </div>
-        <div class="case-block">
-          <h4>Result</h4>
-          <p>SLA attainment up 15%, fewer undetected breaches, lower overtime spend, and clear ownership during incidents.</p>
-        </div>
+      <div class="impact-cell">
+        <div class="impact-num">~30%</div>
+        <div class="impact-label"><strong>Fewer failed deployments</strong>Bell Media · automated release pipelines, several releases a week</div>
       </div>
-      <div class="why-line"><strong>Why it matters now:</strong> most support problems I see today have the same shape. Nobody sees the right number in time, and nobody owns fixing it. I set up the measurement first, then fix the process, automation and AI behind it.</div>
+      <div class="impact-cell">
+        <div class="impact-num">5+ hrs</div>
+        <div class="impact-label"><strong>Saved per sprint</strong>Bell Media · internal tooling that removed repetitive setup work</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-num">900+</div>
+        <div class="impact-label"><strong>BPO agents directed</strong>Bell Canada · support operation across multiple lines of business</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-num">+15%</div>
+        <div class="impact-label"><strong>SLA attainment</strong>Bell Canada · analytics that removed tier-1 support bottlenecks</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-num">+30%</div>
+        <div class="impact-label"><strong>Cross-sell close rate</strong>Bell Canada · training program for a 176-agent team</div>
+      </div>
     </div>
   </div>
 </section>
@@ -988,7 +956,7 @@ section { overflow: hidden; }
 <section id="experience">
   <div class="wrap">
     <div class="section-label reveal">
-      <span class="section-num">02 · EXPERIENCE</span>
+      <span class="section-num">01 · EXPERIENCE</span>
       <div class="section-line"></div>
     </div>
     <h2 class="reveal">Career Timeline</h2>
@@ -1083,7 +1051,7 @@ section { overflow: hidden; }
 <section id="projects">
   <div class="wrap">
     <div class="section-label reveal">
-      <span class="section-num">03 · PROJECTS</span>
+      <span class="section-num">02 · PROJECTS</span>
       <div class="section-line"></div>
     </div>
     <h2 class="reveal">Featured Work</h2>
@@ -1164,6 +1132,7 @@ section { overflow: hidden; }
           <span class="s-chip">Docker</span><span class="s-chip">Kubernetes</span><span class="s-chip">Helm</span>
           <span class="s-chip">GitHub Actions</span><span class="s-chip">GHCR</span><span class="s-chip">Kafka</span>
         </div>
+        <a class="link-out" href="projects/spring-boot-to-production/">Read the case study <span>&rarr;</span></a>
         <a class="link-out" href="https://github.com/threejay20/spring-boot-devops-lab" target="_blank" rel="noopener">
           View on GitHub <span>&rarr;</span>
         </a>
@@ -1308,6 +1277,7 @@ section { overflow: hidden; }
           <span class="s-chip">SNS/SQS</span><span class="s-chip">S3</span><span class="s-chip">CloudFront</span>
           <span class="s-chip">GitHub Actions</span><span class="s-chip">OIDC</span>
         </div>
+        <a class="link-out" href="projects/aws-architecture-portfolio/">Read the case study <span>&rarr;</span></a>
         <a class="link-out" href="https://github.com/threejay20/aws-hybrid-architecture-portfolio" target="_blank" rel="noopener">
           View on GitHub <span>→</span>
         </a>
@@ -1378,6 +1348,7 @@ section { overflow: hidden; }
           <span class="s-chip">OIDC</span><span class="s-chip">Entra ID</span><span class="s-chip">Azure Storage</span>
           <span class="s-chip">Azure Networking</span><span class="s-chip">Checkov</span>
         </div>
+        <a class="link-out" href="projects/azure-terraform-oidc/">Read the case study <span>&rarr;</span></a>
         <a class="link-out" href="https://github.com/threejay20/azure-tf-oidc-lab" target="_blank" rel="noopener">
           View on GitHub <span>→</span>
         </a>
@@ -1467,7 +1438,7 @@ section { overflow: hidden; }
 <section id="cloud-arch">
   <div class="wrap">
     <div class="section-label reveal">
-      <span class="section-num">04 · ARCHITECTURE EXPLORER</span>
+      <span class="section-num">03 · ARCHITECTURE EXPLORER</span>
       <div class="section-line"></div>
     </div>
     <h2 class="reveal">Cloud Architecture Explorer</h2>
@@ -1488,11 +1459,68 @@ section { overflow: hidden; }
   </div>
 </section>
 
+<!-- ── WRITING ── -->
+<section id="writing">
+  <div class="wrap">
+    <div class="section-label reveal">
+      <span class="section-num">04 · WRITING</span>
+      <div class="section-line"></div>
+    </div>
+    <h2 class="reveal">Notes from the work</h2>
+    <p class="section-subtitle reveal">Short articles on CI/CD, reliability and automation, grounded in results from my own labs.</p>
+    <div class="post-list reveal">
+      <a class="post-card" href="writing/pipeline-passed-production-failed/"><span class="post-tag">CI/CD · Reliability</span><h3>Why the pipeline passed and production still failed</h3><p>Three failures where the code was fine and the environment was not.</p></a>
+      <a class="post-card" href="writing/first-minutes-of-an-outage/"><span class="post-tag">SRE · Incident response</span><h3>What I do in the first minutes of an outage</h3><p>Facts before changes, one change at a time, and boring rollbacks.</p></a>
+      <a class="post-card" href="writing/automate-what-shouldnt-need-a-human/"><span class="post-tag">DevOps · Automation</span><h3>Automate what should not need a human</h3><p>Where I automate, and where I keep a human on purpose.</p></a>
+    </div>
+    <a class="link-out" href="writing/">All writing <span>&rarr;</span></a>
+  </div>
+</section>
+
+<!-- ── OPERATIONS CASE STUDY ── -->
+<section id="operations">
+  <div class="wrap">
+    <div class="section-label reveal">
+      <span class="section-num">05 · FROM THE OPERATIONS FLOOR</span>
+      <div class="section-line"></div>
+    </div>
+    <h2 class="reveal">The dashboard that hid our SLA breaches</h2>
+    <p class="section-subtitle reveal">Before DevOps, I ran enterprise support operations. This is the lens I bring to on-call, SLAs and incident response.</p>
+    <div class="project reveal">
+      <span class="label-tag pro">Professional experience · Bell Canada · 2020 to 2022</span>
+      <div class="case-grid">
+        <div class="case-block">
+          <h4>Context</h4>
+          <p>A support operation that grew from a 176-agent team I managed directly to 900+ BPO agents across several lines of business, all measured on service level agreements (SLAs).</p>
+        </div>
+        <div class="case-block">
+          <h4>Problem</h4>
+          <p>Leaders saw performance through lagging, manually built reports. By the time a breach showed up, the day was already lost, and the same tier-1 bottlenecks kept repeating.</p>
+        </div>
+        <div class="case-block">
+          <h4>What I did</h4>
+          <ul>
+            <li>Replaced lagging reports with real-time KPI dashboards</li>
+            <li>Used the data to find and remove recurring tier-1 bottlenecks</li>
+            <li>Redesigned staffing and shift models to cut overtime</li>
+            <li>Worked with IT on monitoring alerts that caught issues before customers did</li>
+          </ul>
+        </div>
+        <div class="case-block">
+          <h4>Result</h4>
+          <p>SLA attainment up 15%, fewer undetected breaches, lower overtime spend, and clear ownership during incidents.</p>
+        </div>
+      </div>
+      <div class="why-line"><strong>Why it matters now:</strong> most support problems I see today have the same shape. Nobody sees the right number in time, and nobody owns fixing it. I set up the measurement first, then fix the process, automation and AI behind it.</div>
+    </div>
+  </div>
+</section>
+
 <!-- ── SKILLS ── -->
 <section id="skills">
   <div class="wrap">
     <div class="section-label reveal">
-      <span class="section-num">05 · SKILLS</span>
+      <span class="section-num">06 · SKILLS</span>
       <div class="section-line"></div>
     </div>
     <h2 class="reveal">Toolkit</h2>
@@ -1564,7 +1592,7 @@ section { overflow: hidden; }
 <section>
   <div class="wrap">
     <div class="section-label reveal">
-      <span class="section-num">06 · EDUCATION &amp; CERTS</span>
+      <span class="section-num">07 · EDUCATION &amp; CERTS</span>
       <div class="section-line"></div>
     </div>
     <h2 class="reveal">Credentials</h2>
@@ -1602,9 +1630,9 @@ section { overflow: hidden; }
 <footer id="contact">
   <div class="wrap">
     <div class="foot-cta reveal">Need a DevOps or Platform engineer who can <span class="g">work from anywhere</span>?</div>
-    <p class="foot-sub reveal">I take remote contracts and full-time roles, and I am comfortable working in any timezone. I also offer a two-week support operations diagnostic.</p>
+    <p class="foot-sub reveal">I take remote contracts and full-time roles, and I am comfortable working in any timezone. I also do <a href="consulting/">support operations consulting</a>.</p>
     <div class="foot-links reveal">
-      <a class="foot-link primary" href="consulting/">Work with me →</a>
+      <a class="foot-link primary" href="writing/">Read my writing →</a>
       <a class="foot-link" href="mailto:justinjjohnson20@gmail.com">✉ justinjjohnson20@gmail.com</a>
       <a class="foot-link" href="https://github.com/threejay20" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
