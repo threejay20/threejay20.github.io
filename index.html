@@ -815,6 +815,16 @@ section { overflow: hidden; }
 .hero-id{display:flex;align-items:center;gap:20px;flex-wrap:nowrap;margin-bottom:8px}.hero-id h1{font-size:clamp(2rem,3.6vw,3.2rem);line-height:1.05;margin:0 0 6px}.hero-id .cert-badge{margin-top:6px}
 .hero-photo{width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:50% 8%;border:2px solid var(--accent);box-shadow:0 0 0 6px rgba(61,217,170,.12);flex:none}
 @media(max-width:600px){.hero-photo{width:84px;height:84px}}
+
+/* polish: larger photo, compact terminal, collapsible project detail */
+.hero-photo{width:150px;height:150px}
+.hero-id{gap:24px}
+.hero-id h1{font-size:clamp(2.1rem,3.6vw,3.2rem)}
+.terminal-body{min-height:210px}
+.proj-more{display:inline-flex;align-items:center;gap:6px;margin:14px 0 4px;padding:6px 12px;border:1px solid var(--border);border-radius:999px;background:transparent;color:var(--accent2);font:12px var(--mono);cursor:pointer}
+.proj-more:hover{border-color:var(--accent2)}
+.is-collapsed .modules,.is-collapsed .project-list{display:none!important}
+@media(max-width:640px){.hero-photo{width:96px;height:96px}}
 </style>
 </head>
 <body>
@@ -2360,5 +2370,8 @@ document.addEventListener('keydown', e => {
 });
 </script>
 
+<script>
+document.querySelectorAll('.desc').forEach(function(d){var c=d.parentElement;if(!c||!c.querySelector('.modules,.project-list'))return;c.classList.add('is-collapsed');var f=c.querySelector('.project-footer');var b=document.createElement('button');b.type='button';b.className='proj-more';b.textContent='Show details \u25BE';b.onclick=function(){var x=c.classList.toggle('is-collapsed');b.textContent=x?'Show details \u25BE':'Hide details \u25B4'};var k=c.querySelector('.project-kpis');(k||d).insertAdjacentElement('afterend',b);});
+</script>
 </body>
 </html>
