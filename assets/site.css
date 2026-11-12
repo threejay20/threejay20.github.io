@@ -77,3 +77,13 @@ article:has(>.box>h2>span)::before{content:'';position:absolute;left:5px;top:10p
 article>.box:has(>h2>span)::before{content:'';position:absolute;left:-27px;top:30px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent);box-shadow:0 0 14px var(--accent)}
 .box li::marker{color:var(--accent)}
 footer,.site{border-top:1px solid rgba(255,255,255,.08)}
+
+/* layout polish */
+.layout.single{display:block}
+.layout.single article{max-width:none;width:100%}
+.cards{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:20px}
+.cards .card{margin:0;padding:24px 26px 28px}
+article>.box{padding:22px 28px;margin:0 0 22px}
+article>.box>h2{margin:0 0 4px;font-size:1.3rem}
+article>.box>h2>span{display:block;margin-top:4px;font:12px var(--mono)!important;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);opacity:1!important}
+article>.box ul{margin:14px 0 0}
