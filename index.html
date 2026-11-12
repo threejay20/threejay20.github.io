@@ -811,6 +811,10 @@ section { overflow: hidden; }
 .post-card p{margin:0;color:var(--text-dim);font-size:15px}
 .post-tag{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--accent);text-transform:uppercase}
 @media(max-width:880px){.post-list{grid-template-columns:1fr}}
+
+.hero-id{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-bottom:8px}
+.hero-photo{width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:50% 8%;border:2px solid var(--accent);box-shadow:0 0 0 6px rgba(61,217,170,.12);flex:none}
+@media(max-width:600px){.hero-photo{width:84px;height:84px}}
 </style>
 </head>
 <body>
@@ -861,10 +865,15 @@ section { overflow: hidden; }
       <!-- Left: Content -->
       <div>
         <div class="status-badge"><span class="status-dot"></span>DEVOPS · PLATFORM ENGINEERING · SRE</div>
+        <div class="hero-id">
+          <img class="hero-photo" src="assets/me.png" alt="Justin Johnson" width="112" height="112">
+          <div>
         <h1><span class="name-grad">Justin Johnson</span></h1>
         <div class="role-line">
           Senior DevOps &amp; Platform Engineer
           <span class="cert-badge">★ AWS Certified Solutions Architect</span>
+        </div>
+          </div>
         </div>
         <p class="lede">
           I build the CI/CD pipelines, Terraform modules and Kubernetes platforms that let teams ship faster and spend less on cloud. I have delivered 25% faster deployment cycles, 30% less environment setup effort and 20% lower compute cost. Before engineering, I directed a 900+ agent operation, so I design for incidents, SLAs and the people on call.
