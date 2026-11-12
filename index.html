@@ -882,6 +882,23 @@ section { overflow: hidden; }
 /* mobile portrait size */
 @media(max-width:900px){.hero-stage{min-height:0;padding:10px 0 30px}.stage-frame{width:min(92%,440px);transform:rotate(2deg)}.chip-float{font-size:11px;padding:8px 11px}.chip-float.c1{top:2%;right:0}.chip-float.c2{top:40%;left:0}.chip-float.c3{bottom:6%;left:2%}}
 @media(max-width:480px){.stage-frame{width:96%}}
+
+/* mobile final (must stay last) */
+@media(max-width:900px){
+.hero{min-height:0;padding-top:34px;padding-bottom:40px}
+.hero .wrap{max-width:100%}
+.hero-inner{grid-template-columns:1fr!important;gap:26px!important}
+.hero-stage{min-height:0!important;padding:8px 0 34px;justify-content:center}
+.stage-frame{width:min(88%,420px)!important}
+.chip-float{font-size:11px;padding:7px 10px;max-width:70%}
+.chip-float.c1{top:0;right:0;left:auto;bottom:auto}
+.chip-float.c2{top:42%;left:0;right:auto;bottom:auto}
+.chip-float.c3{bottom:2%;left:4%;right:auto;top:auto}
+.hero h1{font-size:clamp(3rem,15vw,4.8rem)!important}
+.hero .lede{font-size:1.02rem;line-height:1.6}
+.hero-watermark{font-size:34vw}
+.impact-term{grid-template-columns:1fr!important}
+}
 </style>
 </head>
 <body>
