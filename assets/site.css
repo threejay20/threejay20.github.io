@@ -87,3 +87,6 @@ article>.box{padding:22px 28px;margin:0 0 22px}
 article>.box>h2{margin:0 0 4px;font-size:1.3rem}
 article>.box>h2>span{display:block;margin-top:4px;font:12px var(--mono)!important;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);opacity:1!important}
 article>.box ul{margin:14px 0 0}
+
+.card .tag{border-radius:8px;line-height:1.5;padding:4px 10px;margin-bottom:12px;letter-spacing:.06em}
+.card h2{margin:0 0 10px;line-height:1.3}
